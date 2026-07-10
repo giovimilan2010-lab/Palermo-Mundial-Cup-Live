@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Palermo Mundial Cup Live</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#0b1220;
+color:white;
+}
+
+header{
+background:#16a34a;
+padding:30px;
+text-align:center;
+}
+
+header h1{
+margin:0;
+font-size:40px;
+}
+
+nav{
+display:flex;
+justify-content:center;
+gap:20px;
+padding:20px;
+background:#111827;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+font-weight:bold;
+}
+
+h2{
+text-align:center;
+margin-top:40px;
+}
+
+.giocatori{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
+gap:20px;
+padding:30px;
+}
+
+.carta{
+background:linear-gradient(135deg,#d4af37,#8b5e00);
+border-radius:20px;
+padding:20px;
+text-align:center;
+color:white;
+font-weight:bold;
+transition:.3s;
+}
+
+.carta:hover{
+transform:scale(1.05);
+}
+
+.carta img{
+width:90px;
+height:90px;
+border-radius:50%;
+background:white;
+margin-bottom:10px;
+}
+
+footer{
+margin-top:50px;
+padding:20px;
+text-align:center;
+background:#111827;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+<h1>🏆 Palermo Mundial Cup Live</h1>
+<p>Statistiche ufficiali del torneo</p>
+</header>
+
+<nav>
+<a href="#">Home</a>
+<a href="#">Statistiche Live</a>
+<a href="#">Classifiche</a>
+</nav>
+
+<h2>Giocatori</h2>
+
+<div class="giocatori">
+
+<div class="carta">
+<img src="https://via.placeholder.com/90">
+<h3>Giocatore 1</h3>
+<p>ATT</p>
+</div>
+
+<div class="carta">
+<img src="https://via.placeholder.com/90">
+<h3>Giocatore 2</h3>
+<p>CEN</p>
+</div>
+
+<div class="carta">
+<img src="https://via.placeholder.com/90">
+<h3>Giocatore 3</h3>
+<p>DIF</p>
+</div>
+
+<div class="carta">
+<img src="https://via.placeholder.com/90">
+<h3>Giocatore 4</h3>
+<p>POR</p>
+</div>
+
+</div>
+
+<footer>
+Palermo Mundial Cup © 2025
+</footer>
+
+</body>
+</html>
