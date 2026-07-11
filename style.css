@@ -38,55 +38,30 @@ header p{
     font-size:20px;
 }
 
-nav{
-    display:flex;
-    justify-content:center;
-    gap:20px;
-    padding:18px;
-    background:#111111;
-    border-bottom:2px solid #d4af37;
+.menu{
+    max-width:500px;
+    margin:40px auto;
+    padding:0 20px;
 }
 
-nav a{
-    color:white;
+.menu-btn{
+    display:block;
     text-decoration:none;
-    font-weight:bold;
-    padding:12px 22px;
-    border:2px solid #d4af37;
-    border-radius:12px;
-    transition:0.3s;
-}
-
-nav a:hover{
-    background:#d4af37;
-    color:#111111;
-}
-
-.giocatori{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:20px;
-    padding:30px;
-}
-
-.carta{
+    text-align:center;
+    color:#fff;
     background:#1b1b1b;
     border:2px solid #d4af37;
-    border-radius:20px;
+    border-radius:18px;
     padding:20px;
-    text-align:center;
+    margin-bottom:18px;
+    font-size:24px;
+    font-weight:bold;
     transition:.3s;
 }
 
-.carta:hover{
-    transform:scale(1.05);
-}
-
-.carta img{
-    width:90px;
-    height:90px;
-    border-radius:50%;
-    margin-bottom:15px;
+.menu-btn:hover{
+    background:#d4af37;
+    color:#111;
 }
 
 footer{
