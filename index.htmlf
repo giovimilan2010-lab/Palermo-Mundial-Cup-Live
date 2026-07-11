@@ -68,22 +68,6 @@ gap:20px;
 padding:30px;
 }
 
-.carta{
-background:linear-gradient(135deg,#d4af37,#8b5e00);
-border-radius:20px;
-padding:20px;nav{
-display:flex;
-justify-content:center;
-gap:25px;
-padding:18px;
-background:#111111;
-border-bottom:2px solid #d4af37;
-}text-align:center;
-color:white;
-font-weight:bold;
-transition:.3s;
-}
-
 .carta:hover{
 transform:scale(1.05);
 }
