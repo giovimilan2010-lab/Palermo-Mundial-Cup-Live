@@ -11,28 +11,31 @@ body{
 }
 
 header{
+
+header{
     text-align:center;
     padding:40px 20px;
-    background:linear-gradient(90deg,#111111,#1b1b1b,#111111);
-    border-bottom:3px solid #d4af37;
+    background:#111111;
+    border-bottom:2px solid #d4af37;
 }
 
 .logo{
-    width:170px;
-    display:block;
-    margin:0 auto 20px;
+    width:140px;
+    border-radius:20px;
+    margin-bottom:20px;
 }
 
 header h1{
+    margin:0;
+    font-size:42px;
     color:#d4af37;
-    font-size:48px;
-    letter-spacing:3px;
+    font-weight:800;
 }
 
 header p{
-    color:#f8b4d9;
-    font-size:18px;
     margin-top:10px;
+    color:#f8b4d9;
+    font-size:20px;
 }
 
 nav{
