@@ -147,3 +147,60 @@ nav a{
 }
 
 }
+
+@media (max-width:768px){
+
+header{
+    padding:25px 15px;
+}
+
+.logo{
+    width:120px;
+}
+
+header h1{
+    font-size:30px;
+    letter-spacing:1px;
+}
+
+header p{
+    font-size:16px;
+}
+
+nav{
+    flex-direction:column;
+    gap:12px;
+    padding:15px;
+}
+
+nav a{
+    width:100%;
+    text-align:center;
+}
+
+.home{
+    grid-template-columns:1fr;
+    padding:25px 15px;
+}
+
+.menu-card{
+    padding:25px;
+}
+
+.menu-card h2{
+    font-size:45px;
+}
+
+.menu-card h3{
+    font-size:22px;
+}
+
+.giocatori{
+    grid-template-columns:1fr;
+}
+
+.carta{
+    padding:20px;
+}
+
+}
