@@ -107,6 +107,7 @@ background:#111827;
 <body>
 
 <header>
+    <img src="1000391582.jpg"class="logo">
     <h1>PALERMO MUNDIAL CUP</h1>
     <p>Statistiche ufficiali del torneo</p>
 </header>
@@ -154,3 +155,9 @@ Palermo Mundial Cup ©
 
 </body>
 </html>
+
+.logo{
+    width:180px;
+    display:block;
+    margin:0 auto 20px auto;
+}
