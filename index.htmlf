@@ -23,8 +23,11 @@ box-shadow:0 4px 20px rgba(212,175,55,0.25);
 }
 
 header h1{
-margin:0;
-font-size:40px;
+    margin:0;
+    font-size:48px;
+    color:#f4af37;
+    text-transform:uppercase;
+    letter-spacing:3px;
 }
 
 nav{
@@ -100,6 +103,12 @@ text-align:center;
 background:#111827;
 }
 
+header p{
+    color:#f8b4d9;
+    font-size:18px;
+    margin-top:10px;
+}
+
 </style>
 
 </head>
@@ -157,7 +166,7 @@ Palermo Mundial Cup ©
 </html>
 
 .logo{
-    width:180px;
+    width:170px;
     display:block;
     margin:0 auto 20px auto;
 }
