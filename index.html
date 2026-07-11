@@ -10,14 +10,16 @@
 body{
 margin:0;
 font-family:Arial,sans-serif;
-background:#0b1220;
-color:white;
+background:linear-gradient(180deg,#050505,#111111,#1a1a1a);
+color:#ffffff;
 }
 
 header{
-background:#16a34a;
-padding:30px;
+background:linear-gradient(90deg,#111111,#1b1b1b,#111111);
+padding:35px;
 text-align:center;
+border-bottom:3px solid #d4af37;
+box-shadow:0 4px 20px rgba(212,175,55,0.25);
 }
 
 header h1{
@@ -28,17 +30,29 @@ font-size:40px;
 nav{
 display:flex;
 justify-content:center;
-gap:20px;
-padding:20px;
-background:#111827;
+gap:25px;
+padding:18px;
+background:#111111;
+border-bottom:2px solid #d4af37;
 }
 
 nav a{
-color:white;
+color:#ffffff;
 text-decoration:none;
 font-weight:bold;
+padding:12px 22px;
+border:2px solid #d4af37;
+border-radius:12px;
+background:#1a1a1a;
+transition:0.3s;
 }
 
+nav a:hover{
+background:#d4af37;
+color:#111111;
+transform:translateY(-2px);
+}
+  
 h2{
 text-align:center;
 margin-top:40px;
@@ -54,8 +68,14 @@ padding:30px;
 .carta{
 background:linear-gradient(135deg,#d4af37,#8b5e00);
 border-radius:20px;
-padding:20px;
-text-align:center;
+padding:20px;nav{
+display:flex;
+justify-content:center;
+gap:25px;
+padding:18px;
+background:#111111;
+border-bottom:2px solid #d4af37;
+}text-align:center;
 color:white;
 font-weight:bold;
 transition:.3s;
