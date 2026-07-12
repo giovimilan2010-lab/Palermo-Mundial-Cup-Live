@@ -3,189 +3,82 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Palermo Mundial Cup Live</title>
+<title>Palermo Mundial Cup</title>
 
-<style>
-
-body{
-margin:0;
-font-family:Arial,sans-serif;
-background:linear-gradient(180deg,#050505,#111111,#1a1a1a);
-color:#ffffff;
-}
-
-header{
-background:linear-gradient(90deg,#111111,#1b1b1b,#111111);
-padding:35px;
-text-align:center;
-border-bottom:3px solid #d4af37;
-box-shadow:0 4px 20px rgba(212,175,55,0.25);
-}
-
-header h1{
-    margin:0;
-    font-size:48px;
-    color:#f4af37;
-    text-transform:uppercase;
-    letter-spacing:3px;
-}
-
-nav{
-display:flex;
-justify-content:center;
-gap:25px;
-padding:18px;
-background:#111111;
-border-bottom:2px solid #d4af37;
-}
-
-nav a{
-color:#ffffff;
-text-decoration:none;
-font-weight:bold;
-padding:12px 22px;
-border:2px solid #d4af37;
-border-radius:12px;
-background:#1a1a1a;
-transition:0.3s;
-}
-
-nav a:hover{
-background:#d4af37;
-color:#111111;
-transform:translateY(-2px);
-}
-  
-h2{
-text-align:center;
-margin-top:40px;
-}
-
-.giocatori{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
-gap:20px;
-padding:30px;
-}
-
-.carta:hover{
-transform:scale(1.05);
-}
-
-.carta{
-background:linear-gradient(135deg,#d4af37,#8b5e00);
-border-radius:20px;
-padding:20px;
-text-align:center;
-color:white;
-font-weight:bold;
-transition:.3s;
-}
-
-header p{
-    color:#f8b4d9;
-    font-size:18px;
-    margin-top:10px;
-}
-
-.logo{
-    width:170px;
-    display:block;
-    margin:0 auto 20px auto;
-}
-
-.menu{
-    display:flex;
-    flex-direction:column;
-    gap:15px;
-    max-width:500px;
-    margin:40px auto;
-    padding:0 20px;
-}
-
-.menu-btn{
-    display:block;
-    text-decoration:none;
-    text-align:center;
-    color:#fff;
-    background:#1b1b1b;
-    border:2px solid #d4af37;
-    border-radius:18px;
-    padding:20px;
-    font-size:24px;
-    font-weight:bold;
-    transition:.3s;
-}
-
-.menu-btn:hover{
-    background:#d4af37;
-    color:#111;
-}
-    
-</style>
+<link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
 
 <header>
-    <img src="1000391582.jpg"class="logo">
-    <h1>PALERMO MUNDIAL CUP</h1>
-    <p>Statistiche ufficiali del torneo</p>
+
+<img src="1000391582.jpg" class="logo">
+
+<h1>PALERMO<br>MUNDIAL CUP</h1>
+
+<p>Statistiche ufficiali del torneo</p>
+
 </header>
 
 <section class="menu">
 
-<a class="menu-btn" href="statistiche.html">
+<a href="statistiche.html" class="menu-btn">
 📊 Statistiche Live
 </a>
 
-<a class="menu-btn" href="classifiche.html">
+<a href="classifiche.html" class="menu-btn">
 🏆 Classifiche
 </a>
 
-<a class="menu-btn" href="mvp.html">
+<a href="mvp.html" class="menu-btn">
 ⭐ Vota MVP
 </a>
 
-<a class="menu-btn" href="#giocatori">
+<a href="#giocatori" class="menu-btn">
 👥 Giocatori
 </a>
 
 </section>
 
-<h2 id="giocatori">Giocatori</h2>
+<section id="giocatori">
+
+<h2>Giocatori</h2>
 
 <div class="giocatori">
 
 <div class="carta">
-<img src="https://via.placeholder.com/90">
+<img src="https://via.placeholder.com/100">
 <h3>Giocatore 1</h3>
 <p>ATT</p>
 </div>
 
 <div class="carta">
-<img src="https://via.placeholder.com/90">
+<img src="https://via.placeholder.com/100">
 <h3>Giocatore 2</h3>
 <p>CEN</p>
 </div>
 
 <div class="carta">
-<img src="https://via.placeholder.com/90">
+<img src="https://via.placeholder.com/100">
 <h3>Giocatore 3</h3>
 <p>DIF</p>
 </div>
 
 <div class="carta">
-<img src="https://via.placeholder.com/90">
+<img src="https://via.placeholder.com/100">
 <h3>Giocatore 4</h3>
 <p>POR</p>
 </div>
 
 </div>
 
+</section>
+
 <footer>
-Palermo Mundial Cup © 
+
+Palermo Mundial Cup © 2026
+
 </footer>
 
 </body>
