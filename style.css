@@ -1,181 +1,191 @@
+/* =====================================================
+   PALERMO MUNDIAL CUP
+   STYLE 2026
+===================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
 }
 
 body{
-    font-family:Arial, Helvetica, sans-serif;
-    background:linear-gradient(180deg,#050505,#111111);
-    color:white;
+
+background:#070707;
+color:#ffffff;
+
+font-family:'Montserrat',sans-serif;
+
+background-image:
+radial-gradient(circle at top,#1b1b1b 0%,#070707 60%);
+
 }
+
+/* ===========================
+HEADER
+=========================== */
 
 header{
-    text-align:center;
-    padding:40px 20px;
-    background:#111111;
-    border-bottom:2px solid #d4af37;
+
+text-align:center;
+
+padding:40px 20px;
+
+border-bottom:3px solid #d4af37;
+
+background:linear-gradient(
+180deg,
+#111111 0%,
+#070707 100%
+);
+
 }
+
+/* ===========================
+LOGO
+=========================== */
 
 .logo{
-    width:180px;
-    border-radius:20px;
-    margin-bottom:20px;
-}
 
-header h1{
-    font-size:60px;
-    color:#d4af37;
-    font-weight:800;
-    line-height:1.1;
-}
+width:170px;
 
-header p{
-    margin-top:15px;
-    color:#f0b6d9;
-    font-size:22px;
-}
+margin-bottom:20px;
 
-.menu{
-    max-width:600px;
-    margin:40px auto;
-    padding:0 20px;
-}
+filter:drop-shadow(0 0 12px rgba(212,175,55,.35));
 
-.menu-btn{
-    display:block;
-    text-decoration:none;
-    text-align:center;
-    color:white;
-    background:#1b1b1b;
-    border:2px solid #d4af37;
-    border-radius:18px;
-    padding:20px;
-    margin-bottom:18px;
-    font-size:24px;
-    font-weight:bold;
-}
-
-h2{
-    text-align:center;
-    font-size:50px;
-    margin:40px 0;
-}
-
-.giocatori{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:25px;
-    padding:20px;
-    max-width:1200px;
-    margin:auto;
-}
-
-.carta{
-    background:linear-gradient(135deg,#d4af37,#9c7500);
-    color:white;
-    text-align:center;
-    padding:30px;
-    border-radius:25px;
-}
-
-.carta img{
-    width:90px;
-    height:90px;
-    border-radius:50%;
-    margin-bottom:15px;
-}
-
-.carta h3{
-    font-size:34px;
-    margin-bottom:10px;
-}
-
-.carta p{
-    font-size:28px;
-    font-weight:bold;
-}
-
-footer{
-    text-align:center;
-    padding:30px;
-    margin-top:40px;
-    border-top:2px solid #d4af37;
-}
-
-@media (max-width:768px){
-
-    .logo{
-        width:140px;
-    }
-
-    header h1{
-        font-size:42px;
-    }
-
-    header p{
-        font-size:18px;
-    }
-
-    .menu-btn{
-        font-size:20px;
-        padding:18px;
-    }
-
-    h2{
-        font-size:40px;
-    }
-
-    .giocatori{
-        grid-template-columns:1fr;
-    }
+transition:.35s;
 
 }
 
-/* ---------- PAGINA SQUADRE ---------- */
+.logo:hover
+
+
+/* =====================================================
+   CARD - MENU - PULSANTI
+===================================================== */
 
 .menu-card{
 
-background:#ffffff;
-color:#222;
+width:92%;
+
+max-width:900px;
+
+margin:35px auto;
+
+padding:35px;
+
+background:#101010;
+
+border:2px solid #d4af37;
+
+border-radius:22px;
+
+box-shadow:
+
+0 0 18px rgba(212,175,55,.18);
+
+transition:.35s;
+
+}
+
+.menu-card:hover{
+
+transform:translateY(-4px);
+
+box-shadow:
+
+0 0 30px rgba(255,95,162,.25),
+
+0 0 20px rgba(212,175,55,.25);
+
+}
+
+/* ===========================
+MENU
+=========================== */
+
+.menu{
+
+display:flex;
+
+flex-direction:column;
+
+gap:18px;
+
+width:92%;
+
 max-width:700px;
-margin:30px auto;
-padding:30px;
+
+margin:40px auto;
+
+}
+
+/* ===========================
+BOTTONI
+================
+
+/* =====================================================
+   ANIMAZIONI - RESPONSIVE - EFFETTI PREMIUM
+===================================================== */
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+
+width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:#0b0b0b;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:#d4af37;
+
 border-radius:20px;
-box-shadow:0 8px 20px rgba(0,0,0,.20);
 
 }
 
-.menu-card h2{
+::-webkit-scrollbar-thumb:hover{
 
-text-align:center;
-color:#d4af37;
-font-size:32px;
-margin-bottom:30px;
+background:#ff5fa2;
 
 }
 
-.menu-card h3{
+/* Selezione testo */
 
-color:#111;
-margin-top:20px;
-font-size:22px;
+::selection{
 
-}
+background:#ff5fa2;
 
-.menu-card p{
-
-font-size:20px;
-padding:8px 0;
-margin:0;
+color:white;
 
 }
 
-.menu-card hr{
+/* Animazione ingresso */
 
-margin:20px 0;
-border:none;
-height:1px;
-background:#ddd;
+header,
+.menu-card,
+.menu{
+
+animation:fadeUp .7s ease;
 
 }
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(30px);
