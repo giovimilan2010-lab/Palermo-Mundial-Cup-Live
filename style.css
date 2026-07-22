@@ -781,30 +781,14 @@ border-color:#ff5fa2;
 
 .numero-maglia{
 
-display:inline-block;
-
-min-width:42px;
-
-padding:4px 8px;
-
-margin-right:10px;
-
-background:#111111;
-
-border:2px solid #d4af37;
-
 color:#d4af37 !important;
 
 font-weight:700;
 
-font-size:17px;
+font-size:18px;
 
 font-family:'Bebas Neue',sans-serif;
 
-text-align:center;
-
-border-radius:8px;
-
-box-shadow:0 0 10px rgba(212,175,55,.45);
+margin-right:10px;
 
 }
