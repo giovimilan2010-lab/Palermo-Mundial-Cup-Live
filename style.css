@@ -789,16 +789,22 @@ padding:4px 8px;
 
 margin-right:10px;
 
-background:#d4af37;
+background:#111111;
 
-color:#111;
+border:2px solid #d4af37;
+
+color:#d4af37 !important;
 
 font-weight:700;
+
+font-size:17px;
+
+font-family:'Bebas Neue',sans-serif;
 
 text-align:center;
 
 border-radius:8px;
 
-box-shadow:0 0 8px rgba(212,175,55,.35);
+box-shadow:0 0 10px rgba(212,175,55,.45);
 
 }
