@@ -845,3 +845,45 @@ transform: translateY(0);
 }
 
 }
+
+#ricerca {
+
+width: 100%;
+
+padding: 18px;
+
+font-size: 18px;
+
+border-radius: 15px;
+
+border: 2px solid rgba(255,255,255,0.25);
+
+background: rgba(255,255,255,0.10);
+
+color: white;
+
+outline: none;
+
+box-sizing: border-box;
+
+margin-top: 20px;
+
+transition: 0.3s;
+
+}
+
+
+#ricerca::placeholder {
+
+color: rgba(255,255,255,0.7);
+
+}
+
+
+#ricerca:focus {
+
+transform: scale(1.02);
+
+border-color: white;
+
+}
