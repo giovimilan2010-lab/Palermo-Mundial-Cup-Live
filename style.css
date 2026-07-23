@@ -792,3 +792,56 @@ font-family:'Bebas Neue',sans-serif;
 margin-right:10px;
 
 }
+
+.risultato-giocatore {
+
+background: rgba(255,255,255,0.10);
+
+border: 2px solid rgba(255,255,255,0.25);
+
+border-radius: 15px;
+
+padding: 18px;
+
+margin: 15px auto;
+
+max-width: 350px;
+
+font-size: 20px;
+
+cursor: pointer;
+
+animation: entrataGiocatore 0.35s ease;
+
+}
+
+
+.risultato-giocatore span {
+
+font-size: 15px;
+
+opacity: 0.8;
+
+}
+
+
+@keyframes entrataGiocatore {
+
+from {
+
+opacity:0;
+
+transform: translateY(-20px);
+
+}
+
+
+to {
+
+opacity:1;
+
+transform: translateY(0);
+
+}
+
+}
