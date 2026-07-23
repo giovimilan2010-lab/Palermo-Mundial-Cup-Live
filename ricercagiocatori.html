@@ -12,7 +12,9 @@
 
 </head>
 
+
 <body>
+
 
 <header>
 
@@ -25,26 +27,23 @@
 </header>
 
 
+
 <section class="menu-card">
 
-<h2 style="text-align:center;">🔍 Cerca Giocatore</h2>
+
+<h2 style="text-align:center;">
+🔍 Cerca Giocatore
+</h2>
 
 
 <input 
 type="text" 
 id="ricerca"
 placeholder="Scrivi il nome del giocatore..."
-style="
-width:100%;
-padding:18px;
-font-size:18px;
-border-radius:12px;
-border:none;
-margin-top:20px;
-">
+>
 
 
-<div id="risultati" style="margin-top:30px;text-align:center;">
+<div id="risultati">
 
 <p>Inizia a cercare un giocatore...</p>
 
@@ -52,6 +51,7 @@ margin-top:20px;
 
 
 </section>
+
 
 
 <div style="text-align:center;margin:30px;">
@@ -63,6 +63,7 @@ margin-top:20px;
 </a>
 
 </div>
+
 
 
 <footer>
@@ -78,21 +79,26 @@ margin-top:20px;
 
 <script>
 
+
 const ricerca = document.getElementById("ricerca");
 const risultati = document.getElementById("risultati");
 
 
 ricerca.addEventListener("input", function(){
 
+
 let testo = ricerca.value.toLowerCase();
+
 
 
 if(testo.length === 0){
 
 risultati.innerHTML = "<p>Inizia a cercare un giocatore...</p>";
+
 return;
 
 }
+
 
 
 let trovati = giocatori.filter(giocatore =>
@@ -116,29 +122,45 @@ return;
 risultati.innerHTML = "";
 
 
+
 trovati.forEach(giocatore => {
 
 
 risultati.innerHTML += `
 
-<div class="menu-btn" style="cursor:pointer;">
 
-${giocatore.bandiera} 
+<div class="risultato-giocatore">
+
+
+${giocatore.bandiera}
+
 <strong>${giocatore.nome}</strong>
+
+
 <br>
+
+
+<span>
 
 ${giocatore.squadra}
 
+</span>
+
+
 </div>
+
 
 `;
 
+
 });
 
 
 });
+
 
 </script>
+
 
 
 </body>
