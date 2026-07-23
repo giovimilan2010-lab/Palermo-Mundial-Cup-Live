@@ -36,14 +36,28 @@
 </h2>
 
 
+
 <input 
 type="text" 
 id="ricerca"
 placeholder="Scrivi il nome del giocatore..."
+style="
+width:100%;
+padding:20px;
+font-size:20px;
+border-radius:15px;
+border:2px solid rgba(255,255,255,0.3);
+background:rgba(255,255,255,0.10);
+color:white;
+box-sizing:border-box;
+margin-top:20px;
+outline:none;
+"
 >
 
 
-<div id="risultati">
+
+<div id="risultati" style="margin-top:30px;text-align:center;">
 
 <p>Inizia a cercare un giocatore...</p>
 
@@ -51,6 +65,7 @@ placeholder="Scrivi il nome del giocatore..."
 
 
 </section>
+
 
 
 
@@ -66,6 +81,7 @@ placeholder="Scrivi il nome del giocatore..."
 
 
 
+
 <footer>
 
 <p>Palermo Mundial Cup © 2026</p>
@@ -74,14 +90,18 @@ placeholder="Scrivi il nome del giocatore..."
 
 
 
+
 <script src="giocatori.js"></script>
+
 
 
 <script>
 
 
 const ricerca = document.getElementById("ricerca");
+
 const risultati = document.getElementById("risultati");
+
 
 
 ricerca.addEventListener("input", function(){
@@ -126,8 +146,8 @@ risultati.innerHTML = "";
 trovati.forEach(giocatore => {
 
 
-risultati.innerHTML += `
 
+risultati.innerHTML += `
 
 <div class="risultato-giocatore">
 
@@ -149,8 +169,8 @@ ${giocatore.squadra}
 
 </div>
 
-
 `;
+
 
 
 });
