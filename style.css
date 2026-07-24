@@ -1023,3 +1023,114 @@ justify-content:space-between;
     margin-top:10px;
 
 }
+
+/* ===========================
+RICERCA GIOCATORI
+=========================== */
+
+.search-container{
+
+    width:90%;
+    max-width:700px;
+    margin:30px auto;
+
+}
+
+#searchInput{
+
+    width:100%;
+
+    padding:18px;
+
+    font-size:20px;
+
+    border-radius:15px;
+
+    border:2px solid #d4af37;
+
+    outline:none;
+
+    box-sizing:border-box;
+
+}
+
+
+#searchResults{
+
+    margin-top:20px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+
+.player-result{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:16px 20px;
+
+    box-shadow:0 6px 15px rgba(0,0,0,.12);
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+
+.player-result:hover{
+
+    transform:translateY(-3px);
+
+}
+
+
+.player-left{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+
+.player-flag{
+
+    font-size:30px;
+
+}
+
+
+.player-name{
+
+    font-size:20px;
+
+    font-weight:bold;
+
+    color:#111;
+
+}
+
+
+.player-team{
+
+    font-size:15px;
+
+    color:#666;
+
+}
