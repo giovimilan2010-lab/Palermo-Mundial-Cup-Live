@@ -12,7 +12,6 @@
 
 </head>
 
-
 <body>
 
 
@@ -30,34 +29,20 @@
 
 <section class="menu-card">
 
-
 <h2 style="text-align:center;">
 🔍 Cerca Giocatore
 </h2>
 
 
-
 <input 
-type="text" 
 id="ricerca"
+type="text"
 placeholder="Scrivi il nome del giocatore..."
-style="
-width:100%;
-padding:20px;
-font-size:20px;
-border-radius:15px;
-border:2px solid rgba(255,255,255,0.3);
-background:rgba(255,255,255,0.10);
-color:white;
-box-sizing:border-box;
-margin-top:20px;
-outline:none;
-"
 >
 
 
 
-<div id="risultati" style="margin-top:30px;text-align:center;">
+<div id="risultati">
 
 <p>Inizia a cercare un giocatore...</p>
 
@@ -65,7 +50,6 @@ outline:none;
 
 
 </section>
-
 
 
 
@@ -81,18 +65,15 @@ outline:none;
 
 
 
-
 <footer>
 
-<p>Palermo Mundial Cup © 2026</p>
+Palermo Mundial Cup © 2026
 
 </footer>
 
 
 
-
 <script src="giocatori.js"></script>
-
 
 
 <script>
@@ -104,16 +85,16 @@ const risultati = document.getElementById("risultati");
 
 
 
-ricerca.addEventListener("input", function(){
+ricerca.addEventListener("input",()=>{
 
 
 let testo = ricerca.value.toLowerCase();
 
 
 
-if(testo.length === 0){
+if(testo===""){
 
-risultati.innerHTML = "<p>Inizia a cercare un giocatore...</p>";
+risultati.innerHTML="<p>Inizia a cercare un giocatore...</p>";
 
 return;
 
@@ -121,17 +102,17 @@ return;
 
 
 
-let trovati = giocatori.filter(giocatore =>
+let trovati = giocatori.filter(g =>
 
-giocatore.nome.toLowerCase().includes(testo)
+g.nome.toLowerCase().includes(testo)
 
 );
 
 
 
-if(trovati.length === 0){
+if(trovati.length===0){
 
-risultati.innerHTML = "<p>Nessun giocatore trovato</p>";
+risultati.innerHTML="<p>Nessun giocatore trovato</p>";
 
 return;
 
@@ -139,34 +120,32 @@ return;
 
 
 
-risultati.innerHTML = "";
+risultati.innerHTML="";
 
 
 
-trovati.forEach(giocatore => {
-
+trovati.forEach(g=>{
 
 
 risultati.innerHTML += `
 
-<a href="giocatore.html?nome=${encodeURIComponent(giocatore.nome)}" class="risultato-giocatore">
 
-${giocatore.bandiera}
+<a href="giocatore.html?id=${g.id}" class="risultato-giocatore">
 
-<strong>${giocatore.nome}</strong>
+
+${g.bandiera}
+
+<strong>${g.nome}</strong>
 
 <br>
 
-<span>
+<span>${g.squadra}</span>
 
-${giocatore.squadra}
-
-</span>
 
 </a>
 
-`;
 
+`;
 
 
 });
