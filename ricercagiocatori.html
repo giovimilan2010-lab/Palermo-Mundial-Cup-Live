@@ -149,16 +149,13 @@ trovati.forEach(giocatore => {
 
 risultati.innerHTML += `
 
-<div class="risultato-giocatore">
-
+<a href="giocatore.html?nome=${encodeURIComponent(giocatore.nome)}" class="risultato-giocatore">
 
 ${giocatore.bandiera}
 
 <strong>${giocatore.nome}</strong>
 
-
 <br>
-
 
 <span>
 
@@ -166,8 +163,7 @@ ${giocatore.squadra}
 
 </span>
 
-
-</div>
+</a>
 
 `;
 
