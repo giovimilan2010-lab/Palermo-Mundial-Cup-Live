@@ -1134,3 +1134,205 @@ RICERCA GIOCATORI
     color:#666;
 
 }
+
+/* ==========================
+   DESIGN MVP PALERMO MUNDIAL CUP
+========================== */
+
+
+.menu-card{
+
+    width:90%;
+    max-width:900px;
+    margin:30px auto;
+
+    text-align:center;
+
+}
+
+
+.menu-card p{
+
+    font-size:20px;
+    font-weight:bold;
+
+    margin-top:25px;
+
+}
+
+
+
+.mvp-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:25px;
+
+    margin-top:35px;
+
+}
+
+
+
+.mvp-card{
+
+    position:relative;
+
+    background:linear-gradient(145deg,#111,#252525);
+
+    border:2px solid #d4af37;
+
+    border-radius:25px;
+
+    padding:25px 15px;
+
+    min-height:220px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,0.35);
+
+    overflow:hidden;
+
+}
+
+
+
+.mvp-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:6px;
+
+    background:#d4af37;
+
+}
+
+
+
+.mvp-card h2{
+
+    color:white;
+
+    font-size:25px;
+
+    height:65px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+}
+
+
+
+.mvp-card button{
+
+    width:80%;
+
+    background:#d4af37;
+
+    color:#111;
+
+    border:none;
+
+    padding:14px;
+
+    border-radius:30px;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+
+
+.mvp-card button:hover{
+
+    transform:scale(1.08);
+
+}
+
+
+
+/* animazione entrata */
+
+.mvp-card{
+
+    animation:entrataMVP .7s ease;
+
+}
+
+
+
+@keyframes entrataMVP{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+
+
+@media(max-width:600px){
+
+    .mvp-grid{
+
+        gap:15px;
+
+    }
+
+
+    .mvp-card{
+
+        min-height:200px;
+
+    }
+
+
+    .mvp-card h2{
+
+        font-size:20px;
+
+    }
+
+}
