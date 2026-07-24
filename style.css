@@ -1412,27 +1412,196 @@ RICERCA GIOCATORI
 
 }
 
+/* ================================
+   PALERMO MUNDIAL CUP - MVP CARD
+================================ */
 
-.mvp-card::after{
+.mvp-card {
 
-    content:"⭐ MVP";
+    position: relative;
+
+    background:
+    linear-gradient(145deg, #111111, #242424);
+
+    border: 2px solid #d4af37;
+
+    border-radius: 25px;
+
+    padding: 25px 18px;
+
+    min-height: 280px;
+
+    color: white;
+
+    overflow: hidden;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,0.45),
+    inset 0 0 20px rgba(212,175,55,0.15);
+
+    transition: 0.35s ease;
+
+}
+
+
+/* effetto quando tocchi la card */
+
+.mvp-card:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow:
+    0 15px 40px rgba(212,175,55,0.35);
+
+}
+
+
+/* luce dorata superiore */
+
+.mvp-card::before {
+
+    content:"";
 
     position:absolute;
 
-    top:15px;
+    top:0;
 
-    right:15px;
+    left:0;
+
+    width:100%;
+
+    height:6px;
+
+    background:linear-gradient(
+    90deg,
+    #d4af37,
+    #fff2a8,
+    #d4af37
+    );
+
+}
+
+
+/* stemma PMC */
+
+.mvp-card .pmc-logo {
+
+    width:70px;
+
+    height:70px;
+
+    margin:0 auto 15px;
+
+    display:block;
+
+}
+
+
+/* bandiera */
+
+.mvp-card .player-flag {
+
+    font-size:45px;
+
+    margin-bottom:10px;
+
+}
+
+
+/* nome giocatore */
+
+.mvp-card h2 {
+
+    font-size:22px;
+
+    font-weight:800;
+
+    text-transform:uppercase;
+
+    letter-spacing:1px;
+
+    margin:10px 0;
+
+    color:white;
+
+}
+
+
+/* squadra */
+
+.mvp-card .team-name {
+
+    font-size:16px;
+
+    color:#d4af37;
+
+    font-weight:bold;
+
+    margin-bottom:20px;
+
+}
+
+
+/* pulsante voto */
+
+.mvp-card button {
 
     background:#d4af37;
 
-    color:black;
+    color:#111;
 
-    padding:5px 12px;
+    border:none;
 
-    border-radius:20px;
+    border-radius:30px;
 
-    font-size:12px;
+    padding:12px 35px;
 
-    font-weight:bold;
+    font-size:15px;
+
+    font-weight:900;
+
+    cursor:pointer;
+
+    transition:0.3s ease;
+
+}
+
+
+.mvp-card button:hover {
+
+    background:white;
+
+    transform:scale(1.08);
+
+}
+
+
+/* entrata dal basso */
+
+.mvp-card {
+
+    animation:pmcEnter 0.7s ease forwards;
+
+}
+
+
+@keyframes pmcEnter {
+
+    from {
+
+        opacity:0;
+
+        transform:translateY(60px);
+
+    }
+
+
+    to {
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
 
 }
