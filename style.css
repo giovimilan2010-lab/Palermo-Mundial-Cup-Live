@@ -1384,3 +1384,55 @@ RICERCA GIOCATORI
     justify-content: flex-start !important;
 
 }
+
+/* CARD MVP PREMIUM */
+
+.mvp-card{
+
+    background:linear-gradient(145deg,#151515,#292929) !important;
+
+    border:2px solid #d4af37 !important;
+
+    border-radius:25px !important;
+
+    padding:25px 15px !important;
+
+    min-height:260px;
+
+    color:white;
+
+}
+
+
+.mvp-card h2{
+
+    color:white !important;
+
+    font-size:22px !important;
+
+}
+
+
+.mvp-card::after{
+
+    content:"⭐ MVP";
+
+    position:absolute;
+
+    top:15px;
+
+    right:15px;
+
+    background:#d4af37;
+
+    color:black;
+
+    padding:5px 12px;
+
+    border-radius:20px;
+
+    font-size:12px;
+
+    font-weight:bold;
+
+}
