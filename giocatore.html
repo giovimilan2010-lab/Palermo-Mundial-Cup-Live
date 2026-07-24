@@ -12,29 +12,39 @@
 
 </head>
 
+
 <body>
+
 
 <header>
 
 <img src="1000391582.jpg" class="logo" alt="Palermo Mundial Cup">
 
-<h1 id="nomeGiocatore">Giocatore</h1>
+<h1 id="nome"></h1>
 
-<p id="squadraGiocatore"></p>
+<p id="squadra"></p>
 
 </header>
 
-<section class="menu-card">
 
-<h2 id="bandiera" style="font-size:55px;text-align:center;"></h2>
 
-<h1 id="numero" style="text-align:center;font-size:65px;color:#FFD700;"></h1>
+<section class="menu-card" id="card-giocatore">
 
-<h2 id="ruolo" style="text-align:center;"></h2>
+
+<h2 id="bandiera"></h2>
+
+
+<h1 id="numero"></h1>
+
+
+<h2 id="ruolo"></h2>
+
 
 <hr>
 
+
 <h2>📊 Statistiche Live</h2>
+
 
 <p>⚽ Gol: <span id="gol"></span></p>
 
@@ -42,11 +52,14 @@
 
 <p>⭐ MVP: <span id="mvp"></span></p>
 
-<p>🟨 Gialli: <span id="gialli"></span></p>
+<p>🟨 Cartellini gialli: <span id="gialli"></span></p>
 
-<p>🟥 Rossi: <span id="rossi"></span></p>
+<p>🟥 Cartellini rossi: <span id="rossi"></span></p>
+
 
 </section>
+
+
 
 <div style="text-align:center;margin:30px;">
 
@@ -58,13 +71,74 @@
 
 </div>
 
+
+
 <footer>
 
 Palermo Mundial Cup © 2026
 
 </footer>
 
+
+
 <script src="giocatori.js"></script>
+
+
+<script>
+
+
+const parametri = new URLSearchParams(window.location.search);
+
+const idGiocatore = Number(parametri.get("id"));
+
+
+
+const giocatore = giocatori.find(g => g.id === idGiocatore);
+
+
+
+if(giocatore){
+
+
+document.getElementById("nome").innerHTML = giocatore.nome;
+
+document.getElementById("squadra").innerHTML = giocatore.squadra;
+
+document.getElementById("bandiera").innerHTML = giocatore.bandiera;
+
+
+document.getElementById("numero").innerHTML = "#" + giocatore.numero;
+
+
+document.getElementById("ruolo").innerHTML = giocatore.ruolo;
+
+
+document.getElementById("gol").innerHTML = giocatore.gol;
+
+document.getElementById("assist").innerHTML = giocatore.assist;
+
+document.getElementById("mvp").innerHTML = giocatore.mvp;
+
+document.getElementById("gialli").innerHTML = giocatore.gialli;
+
+document.getElementById("rossi").innerHTML = giocatore.rossi;
+
+
+}
+
+
+else{
+
+
+document.getElementById("nome").innerHTML="Giocatore non trovato";
+
+
+}
+
+
+</script>
+
+
 
 </body>
 
