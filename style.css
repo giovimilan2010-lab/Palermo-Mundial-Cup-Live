@@ -934,14 +934,16 @@ justify-content:space-between;
 
 
 
-.mvp-card h2 {
-
-    font-size: 22px;
-
-    margin-bottom: 20px;
-
-    color: #111;
-
+.mvp-card h2{
+    font-size:22px;
+    color:#111;
+    height:70px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    margin:0 0 20px 0;
+    line-height:1.2;
 }
 
 
