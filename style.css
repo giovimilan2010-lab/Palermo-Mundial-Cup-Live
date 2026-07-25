@@ -1605,3 +1605,139 @@ RICERCA GIOCATORI
     }
 
 }
+
+/* ==================================
+   PALERMO MUNDIAL CUP - MVP PREMIUM
+   WATERMARK + LOGO
+================================== */
+
+.mvp-card {
+
+    position: relative;
+    overflow: hidden;
+
+    background:
+    linear-gradient(145deg, #101010, #252525);
+
+    border: 2px solid #d4af37;
+
+    border-radius: 24px;
+
+    box-shadow:
+    0 10px 35px rgba(0,0,0,0.45),
+    inset 0 0 25px rgba(212,175,55,0.12);
+
+}
+
+
+/* WATERMARK PMC SULLO SFONDO */
+
+.mvp-card::before {
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background-image:url("logo-pmc.png");
+
+    background-repeat:no-repeat;
+
+    background-position:center;
+
+    background-size:180px;
+
+    opacity:0.08;
+
+    pointer-events:none;
+
+}
+
+
+/* CONTENUTO SOPRA IL WATERMARK */
+
+.mvp-card > * {
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+
+/* LOGO PICCOLO SOPRA */
+
+.mvp-card .pmc-logo {
+
+    width:55px;
+
+    height:55px;
+
+    object-fit:contain;
+
+    margin:0 auto 10px;
+
+    display:block;
+
+}
+
+
+/* BANDIERA */
+
+.mvp-card .player-flag {
+
+    font-size:40px;
+
+    margin:10px 0;
+
+}
+
+
+/* NOME GIOCATORE */
+
+.mvp-card h2 {
+
+    color:white;
+
+    font-size:22px;
+
+    font-weight:900;
+
+    text-transform:uppercase;
+
+    letter-spacing:1px;
+
+}
+
+
+/* SQUADRA */
+
+.mvp-card .team-name {
+
+    color:#d4af37;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+}
+
+
+/* PULSANTE VOTA */
+
+.mvp-card button {
+
+    background:#d4af37;
+
+    color:#111;
+
+    border-radius:25px;
+
+    font-weight:900;
+
+    padding:10px 35px;
+
+    border:none;
+
+}
