@@ -1,1040 +1,373 @@
 /* =====================================================
    PALERMO MUNDIAL CUP 2026
-   STYLE UFFICIALE
+   STYLE UFFICIALE - PEZZO 1
 ===================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500;600;700&display=swap');
 
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 html{
-scroll-behavior:smooth;
+    scroll-behavior:smooth;
 }
 
 body{
-
-background:#050505;
-
-background-image:
-radial-gradient(circle at top,#1b1b1b 0%,#050505 65%);
-
-color:#ffffff;
-
-font-family:'Montserrat',sans-serif;
-
+    background:#050505;
+    background-image:radial-gradient(circle at top,#1b1b1b 0%,#050505 65%);
+    color:white;
+    font-family:'Montserrat',sans-serif;
 }
 
-/* ===========================
-HEADER
-=========================== */
 
 header{
-
-text-align:center;
-
-padding:40px 20px;
-
-background:#0b0b0b;
-
-border-bottom:3px solid #d4af37;
-
-box-shadow:0 5px 20px rgba(212,175,55,.20);
-
+    text-align:center;
+    padding:40px 20px;
+    background:#0b0b0b;
+    border-bottom:3px solid #d4af37;
+    box-shadow:0 5px 20px rgba(212,175,55,.20);
 }
 
-/* ===========================
-LOGO
-=========================== */
 
 .logo{
-
-width:170px;
-
-margin-bottom:20px;
-
-transition:.35s;
-
-filter:drop-shadow(0 0 15px rgba(212,175,55,.35));
-
+    width:170px;
+    margin-bottom:20px;
+    transition:.35s;
+    filter:drop-shadow(0 0 15px rgba(212,175,55,.35));
 }
 
 .logo:hover{
-
-transform:scale(1.06);
-
+    transform:scale(1.06);
 }
 
-/* ===========================
-TITOLO
-=========================== */
 
 h1{
-
-font-family:'Bebas Neue',sans-serif;
-
-font-size:64px;
-
-letter-spacing:4px;
-
-color:#d4af37;
-
-text-transform:uppercase;
-
-text-shadow:
-
-0 0 10px rgba(212,175,55,.30),
-
-0 0 20px rgba(212,175,55,.20);
-
-margin-bottom:10px;
-
+    font-family:'Bebas Neue',sans-serif;
+    font-size:64px;
+    letter-spacing:4px;
+    color:#d4af37;
+    text-transform:uppercase;
+    text-shadow:
+    0 0 10px rgba(212,175,55,.30),
+    0 0 20px rgba(212,175,55,.20);
 }
 
-/* ===========================
-SOTTOTITOLO
-=========================== */
 
 header p{
-
-color:#ff5fa2;
-
-font-size:20px;
-
-font-weight:600;
-
+    color:#ff5fa2;
+    font-size:20px;
+    font-weight:600;
 }
 
-/* ===========================
-TITOLI
-=========================== */
 
 h2{
-
-font-family:'Bebas Neue',sans-serif;
-
-font-size:44px;
-
-letter-spacing:2px;
-
-text-align:center;
-
-color:#ffffff;
-
-margin-bottom:20px;
-
+    font-family:'Bebas Neue',sans-serif;
+    font-size:44px;
+    letter-spacing:2px;
+    text-align:center;
+    color:white;
+    margin-bottom:20px;
 }
+
 
 h3{
-
-font-family:'Bebas Neue',sans-serif;
-
-font-size:30px;
-
-color:#d4af37;
-
-letter-spacing:1px;
-
-margin-top:25px;
-
-margin-bottom:10px;
-
+    font-family:'Bebas Neue',sans-serif;
+    font-size:30px;
+    color:#d4af37;
+    letter-spacing:1px;
+    margin-top:25px;
 }
 
-/* ===========================
-TESTI
-=========================== */
 
 p{
-
-font-size:18px;
-
-line-height:1.7;
-
-color:#f2f2f2;
-
+    font-size:18px;
+    line-height:1.7;
+    color:#f2f2f2;
 }
 
-/* ===========================
-LINK
-=========================== */
 
 a{
+    text-decoration:none;
+    color:inherit;
+}
 
-text-decoration:none;
 
-color:inherit;
-
-}/* =====================================================
-   CARD - MENU - PULSANTI
-===================================================== */
+/* ===========================
+   HOME CARD
+=========================== */
 
 .menu-card{
 
-width:92%;
+    width:92%;
+    max-width:900px;
+    margin:35px auto;
+    padding:35px;
 
-max-width:900px;
+    background:#111;
 
-margin:35px auto;
+    border:2px solid #d4af37;
+    border-radius:20px;
 
-padding:35px;
+    box-shadow:0 0 18px rgba(212,175,55,.20);
 
-background:#111111;
-
-border:2px solid #d4af37;
-
-border-radius:20px;
-
-box-shadow:0 0 18px rgba(212,175,55,.20);
-
-transition:.35s;
+    transition:.35s;
 
 }
+
 
 .menu-card:hover{
 
-transform:translateY(-5px);
+    transform:translateY(-5px);
 
-box-shadow:
-
-0 0 30px rgba(212,175,55,.25),
-
-0 0 18px rgba(255,95,162,.25);
+    box-shadow:
+    0 0 30px rgba(212,175,55,.25),
+    0 0 18px rgba(255,95,162,.25);
 
 }
 
+
+
 /* ===========================
-MENU
+   MENU
 =========================== */
 
 .menu{
 
-width:92%;
+    width:92%;
+    max-width:700px;
 
-max-width:700px;
+    margin:40px auto;
 
-margin:40px auto;
+    display:flex;
 
-display:flex;
+    flex-direction:column;
 
-flex-direction:column;
-
-gap:18px;
+    gap:18px;
 
 }
 
+
+
 /* ===========================
-PULSANTI
+   PULSANTI
 =========================== */
+
 
 .menu-btn{
 
-display:block;
+    display:block;
 
-width:100%;
+    width:100%;
 
-padding:18px;
+    padding:18px;
 
-background:#0d0d0d;
+    background:#0d0d0d;
 
-color:white;
+    color:white;
 
-font-family:'Bebas Neue',sans-serif;
+    font-family:'Bebas Neue',sans-serif;
 
-font-size:30px;
+    font-size:30px;
 
-letter-spacing:2px;
+    letter-spacing:2px;
 
-text-align:center;
+    text-align:center;
 
-border:2px solid #d4af37;
+    border:2px solid #d4af37;
 
-border-radius:16px;
+    border-radius:16px;
 
-transition:.30s;
+    cursor:pointer;
 
-cursor:pointer;
-
-box-shadow:0 0 10px rgba(212,175,55,.15);
+    transition:.30s;
 
 }
+
+
 
 .menu-btn:hover{
 
-background:#ff5fa2;
+    background:#ff5fa2;
 
-border-color:#ff5fa2;
+    border-color:#ff5fa2;
 
-transform:scale(1.03);
+    transform:scale(1.03);
 
-box-shadow:0 0 20px rgba(255,95,162,.40);
+    box-shadow:0 0 20px rgba(255,95,162,.40);
 
 }
+
+
 
 .menu-btn:active{
 
-transform:scale(.98);
+    transform:scale(.98);
 
 }
 
+/* =====================================================
+   PEZZO 2 - TABELLE / FOOTER / GIOCATORI
+===================================================== */
+
+
 /* ===========================
-LINEA
+   LINEE
 =========================== */
 
 hr{
 
-border:none;
+    border:none;
 
-height:2px;
+    height:2px;
 
-background:linear-gradient(
+    background:linear-gradient(
+    90deg,
+    transparent,
+    #d4af37,
+    transparent
+    );
 
-90deg,
-
-transparent,
-
-#d4af37,
-
-transparent
-
-);
-
-margin:25px 0;
+    margin:25px 0;
 
 }
 
+
+
 /* ===========================
-TABELLE
+   TABELLE
 =========================== */
+
 
 table{
 
-width:100%;
+    width:100%;
 
-border-collapse:collapse;
+    border-collapse:collapse;
 
-margin-top:20px;
+    margin-top:20px;
 
 }
+
 
 th{
 
-background:#d4af37;
+    background:#d4af37;
 
-color:#111111;
+    color:#111;
 
-padding:15px;
+    padding:15px;
 
-font-family:'Bebas Neue',sans-serif;
+    font-family:'Bebas Neue',sans-serif;
 
-font-size:24px;
-
-letter-spacing:1px;
+    font-size:24px;
 
 }
+
+
 
 td{
 
-padding:14px;
+    padding:14px;
 
-border-bottom:1px solid rgba(255,255,255,.08);
+    border-bottom:1px solid rgba(255,255,255,.08);
 
-text-align:center;
+    text-align:center;
 
-font-size:17px;
+    font-size:17px;
 
 }
+
+
 
 tr:hover{
 
-background:#1a1a1a;
+    background:#1a1a1a;
 
 }
 
+
+
 /* ===========================
-FOOTER
+   FOOTER
 =========================== */
+
 
 footer{
 
-margin-top:60px;
+    margin-top:60px;
 
-padding:25px;
+    padding:25px;
 
-text-align:center;
+    text-align:center;
 
-font-size:16px;
+    font-size:16px;
 
-color:#bbbbbb;
+    color:#bbbbbb;
 
-border-top:2px solid #d4af37;
+    border-top:2px solid #d4af37;
 
-background:#090909;
+    background:#090909;
 
-}/* =====================================================
-   EFFETTI - ANIMAZIONI
-===================================================== */
+}
+
+
+
+/* ===========================
+   ANIMAZIONI
+=========================== */
+
 
 header,
 .menu-card,
 .menu{
 
-animation:fadeUp .7s ease;
+    animation:fadeUp .7s ease;
 
 }
+
+
 
 @keyframes fadeUp{
 
 from{
 
-opacity:0;
+    opacity:0;
 
-transform:translateY(25px);
+    transform:translateY(25px);
 
 }
 
 to{
 
-opacity:1;
+    opacity:1;
 
-transform:translateY(0);
+    transform:translateY(0);
+
+}
 
 }
 
-}
+
 
 /* ===========================
-LOGO
+   CARD RICERCA GIOCATORI
 =========================== */
 
-.logo{
-
-animation:floatLogo 5s ease-in-out infinite;
-
-}
-
-@keyframes floatLogo{
-
-0%{
-
-transform:translateY(0);
-
-}
-
-50%{
-
-transform:translateY(-6px);
-
-}
-
-100%{
-
-transform:translateY(0);
-
-}
-
-}
-
-/* ===========================
-TITOLO
-=========================== */
-
-h1:hover{
-
-color:white;
-
-transition:.35s;
-
-text-shadow:
-
-0 0 18px #d4af37,
-
-0 0 30px #ff5fa2;
-
-}
-
-/* ===========================
-CARD
-=========================== */
-
-.menu-card{
-
-position:relative;
-
-overflow:hidden;
-
-}
-
-.menu-card::before{
-
-content:"";
-
-position:absolute;
-
-top:0;
-
-left:-120%;
-
-width:120%;
-
-height:100%;
-
-background:linear-gradient(
-
-90deg,
-
-transparent,
-
-rgba(255,255,255,.06),
-
-transparent
-
-);
-
-transition:.9s;
-
-}
-
-.menu-card:hover::before{
-
-left:120%;
-
-}
-
-/* ===========================
-TESTI
-=========================== */
-
-.menu-card p{
-
-transition:.25s;
-
-}
-
-.menu-card p:hover{
-
-color:#ffffff;
-
-}
-
-/* ===========================
-PULSANTI
-=========================== */
-
-.menu-btn{
-
-text-transform:uppercase;
-
-}
-
-.menu-btn:hover{
-
-letter-spacing:3px;
-
-}
-
-/* ===========================
-SCROLLBAR
-=========================== */
-
-::-webkit-scrollbar{
-
-width:10px;
-
-}
-
-::-webkit-scrollbar-track{
-
-background:#0a0a0a;
-
-}
-
-::-webkit-scrollbar-thumb{
-
-background:#d4af37;
-
-border-radius:25px;
-
-}
-
-::-webkit-scrollbar-thumb:hover{
-
-background:#ff5fa2;
-
-}
-
-/* ===========================
-SELEZIONE TESTO
-=========================== */
-
-::selection{
-
-background:#ff5fa2;
-
-color:white;
-
-}/* =====================================================
-   RESPONSIVE
-===================================================== */
-
-@media screen and (max-width:768px){
-
-header{
-
-padding:30px 15px;
-
-}
-
-.logo{
-
-width:130px;
-
-}
-
-h1{
-
-font-size:46px;
-
-letter-spacing:2px;
-
-}
-
-h2{
-
-font-size:34px;
-
-}
-
-h3{
-
-font-size:24px;
-
-}
-
-header p{
-
-font-size:17px;
-
-}
-
-.menu-card{
-
-width:95%;
-
-padding:22px;
-
-border-radius:18px;
-
-}
-
-.menu{
-
-width:95%;
-
-}
-
-.menu-btn{
-
-font-size:24px;
-
-padding:16px;
-
-}
-
-p{
-
-font-size:16px;
-
-}
-
-table{
-
-font-size:14px;
-
-display:block;
-
-overflow-x:auto;
-
-white-space:nowrap;
-
-}
-
-th{
-
-font-size:18px;
-
-padding:10px;
-
-}
-
-td{
-
-font-size:15px;
-
-padding:10px;
-
-}
-
-footer{
-
-font-size:14px;
-
-padding:20px;
-
-}
-
-}
-
-/* =====================================================
-   DETTAGLI FINALI
-===================================================== */
-
-strong{
-
-color:#d4af37;
-
-}
-
-b{
-
-color:#d4af37;
-
-}
-
-img{
-
-max-width:100%;
-
-height:auto;
-
-}
-
-.menu-btn,
-.menu-card,
-.logo{
-
-transition:all .30s ease;
-
-}
-
-/* =====================================================
-   FINE STYLE
-===================================================== */
-
-/* ===========================
-FIX PULSANTI MENU
-=========================== */
-
-.menu{
-display:flex;
-flex-direction:column;
-gap:20px;
-width:92%;
-max-width:700px;
-margin:40px auto;
-position:relative;
-z-index:10;
-}
-
-.menu-btn{
-
-display:block !important;
-
-visibility:visible !important;
-
-opacity:1 !important;
-
-width:100%;
-
-padding:18px;
-
-background:#0d0d0d;
-
-color:#ffffff !important;
-
-font-family:'Bebas Neue',sans-serif;
-
-font-size:30px;
-
-letter-spacing:2px;
-
-text-align:center;
-
-border:2px solid #d4af37;
-
-border-radius:16px;
-
-box-shadow:0 0 15px rgba(212,175,55,.30);
-
-}
-
-.menu-btn:hover{
-
-background:#ff5fa2;
-
-border-color:#ff5fa2;
-
-}
-
-.numero-maglia{
-
-color:#d4af37 !important;
-
-font-weight:700;
-
-font-size:18px;
-
-font-family:'Bebas Neue',sans-serif;
-
-margin-right:10px;
-
-}
-
-.risultato-giocatore {
-
-background: rgba(255,255,255,0.10);
-
-border: 2px solid rgba(255,255,255,0.25);
-
-border-radius: 15px;
-
-padding: 18px;
-
-margin: 15px auto;
-
-max-width: 350px;
-
-font-size: 20px;
-
-cursor: pointer;
-
-animation: entrataGiocatore 0.35s ease;
-
-}
-
-
-.risultato-giocatore span {
-
-font-size: 15px;
-
-opacity: 0.8;
-
-}
-
-
-@keyframes entrataGiocatore {
-
-from {
-
-opacity:0;
-
-transform: translateY(-20px);
-
-}
-
-
-to {
-
-opacity:1;
-
-transform: translateY(0);
-
-}
-
-}
-
-#ricerca {
-
-width: 100%;
-
-padding: 18px;
-
-font-size: 18px;
-
-border-radius: 15px;
-
-border: 2px solid rgba(255,255,255,0.25);
-
-background: rgba(255,255,255,0.10);
-
-color: white;
-
-outline: none;
-
-box-sizing: border-box;
-
-margin-top: 20px;
-
-transition: 0.3s;
-
-}
-
-
-#ricerca::placeholder {
-
-color: rgba(255,255,255,0.7);
-
-}
-
-
-#ricerca:focus {
-
-transform: scale(1.02);
-
-border-color: white;
-
-}
-
-/* ==========================
-   MVP PALERMO MUNDIAL CUP
-========================== */
-
-
-.mvp-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    margin-top: 30px;
-    padding: 15px;
-}
-
-
-.mvp-card {
-
-    background: linear-gradient(145deg, #ffffff, #f0f0f0);
-
-    border-radius: 20px;
-
-    padding: 25px 15px;
-
-    text-align: center;
-
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-
-    animation: comparsaMVP 0.6s ease forwards;
-
-    transition: 0.3s;
-
-   display:flex;
-flex-direction:column;
-justify-content:space-between;
-   
-}
-
-
-
-.mvp-card:hover {
-
-    transform: translateY(-5px);
-
-}
-
-
-
-.mvp-card h2{
-    font-size:22px;
-    color:#111;
-    height:70px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    margin:0 0 20px 0;
-    line-height:1.2;
-}
-
-
-
-.mvp-card button {
-
-    background: linear-gradient(90deg,#d4af37,#f5d76e);
-
-    border: none;
-
-    padding: 12px 35px;
-
-    border-radius: 30px;
-
-    font-size: 16px;
-
-    font-weight: bold;
-
-    cursor: pointer;
-
-    color: black;
-
-}
-
-
-
-.mvp-card button:hover {
-
-    transform: scale(1.05);
-
-}
-
-
-
-@keyframes comparsaMVP {
-
-    from {
-
-        opacity: 0;
-
-        transform: translateY(30px);
-
-    }
-
-    to {
-
-        opacity: 1;
-
-        transform: translateY(0);
-
-    }
-
-}
-
-
-
-/* Titolo partita MVP */
-
-#giornata {
-
-    text-align:center;
-
-    color:#d4af37;
-
-    font-size:28px;
-
-}
-
-
-
-#partita {
-
-    text-align:center;
-
-    font-size:24px;
-
-    margin-top:10px;
-
-}
-
-/* ===========================
-RICERCA GIOCATORI
-=========================== */
 
 .search-container{
 
     width:90%;
+
     max-width:700px;
+
     margin:30px auto;
 
 }
+
+
 
 #searchInput{
 
@@ -1048,11 +381,14 @@ RICERCA GIOCATORI
 
     border:2px solid #d4af37;
 
+    background:white;
+
+    color:#111;
+
     outline:none;
 
-    box-sizing:border-box;
-
 }
+
 
 
 #searchResults{
@@ -1066,6 +402,7 @@ RICERCA GIOCATORI
     gap:15px;
 
 }
+
 
 
 .player-result{
@@ -1091,11 +428,13 @@ RICERCA GIOCATORI
 }
 
 
+
 .player-result:hover{
 
     transform:translateY(-3px);
 
 }
+
 
 
 .player-left{
@@ -1109,11 +448,13 @@ RICERCA GIOCATORI
 }
 
 
+
 .player-flag{
 
     font-size:30px;
 
 }
+
 
 
 .player-name{
@@ -1127,6 +468,7 @@ RICERCA GIOCATORI
 }
 
 
+
 .player-team{
 
     font-size:15px;
@@ -1135,31 +477,112 @@ RICERCA GIOCATORI
 
 }
 
-/* ==========================
-   DESIGN MVP PALERMO MUNDIAL CUP
-========================== */
 
 
-.menu-card{
-
-    width:90%;
-    max-width:900px;
-    margin:30px auto;
-
-    text-align:center;
-
-}
+/* ===========================
+   RISULTATI RICERCA
+=========================== */
 
 
-.menu-card p{
+.risultato-giocatore{
+
+    background:rgba(255,255,255,.10);
+
+    border:2px solid rgba(255,255,255,.25);
+
+    border-radius:15px;
+
+    padding:18px;
+
+    margin:15px auto;
+
+    max-width:350px;
 
     font-size:20px;
-    font-weight:bold;
 
-    margin-top:25px;
+    cursor:pointer;
 
 }
 
+
+
+.risultato-giocatore span{
+
+    font-size:15px;
+
+    opacity:.8;
+
+}
+
+
+
+/* ===========================
+   CARD GIOCATORI SQUADRE
+=========================== */
+
+
+.team-player-card,
+.player-card,
+.player-box,
+.roster-player{
+
+    text-align:left !important;
+
+}
+
+
+
+.team-player-card *,
+.player-card *,
+.player-box *,
+.roster-player *{
+
+    text-align:left !important;
+
+}
+
+
+
+.team-player-card,
+.player-card,
+.player-box,
+.roster-player{
+
+    align-items:flex-start !important;
+
+    justify-content:flex-start !important;
+
+}
+
+
+
+/* ===========================
+   NUMERO MAGLIA
+=========================== */
+
+
+.numero-maglia{
+
+    color:#d4af37;
+
+    font-weight:700;
+
+    font-size:18px;
+
+    font-family:'Bebas Neue',sans-serif;
+
+    margin-right:10px;
+
+}
+
+/* =====================================================
+   PEZZO 3 - MVP PALERMO MUNDIAL CUP
+===================================================== */
+
+
+/* ===========================
+   CONTENITORE MVP
+=========================== */
 
 
 .mvp-grid{
@@ -1170,17 +593,27 @@ RICERCA GIOCATORI
 
     gap:25px;
 
-    margin-top:35px;
+    margin:35px auto;
+
+    padding:15px;
+
+    max-width:900px;
 
 }
 
+
+
+/* ===========================
+   CARD MVP
+=========================== */
 
 
 .mvp-card{
 
     position:relative;
 
-    background:linear-gradient(145deg,#111,#252525);
+    background:
+    linear-gradient(145deg,#151515,#292929);
 
     border:2px solid #d4af37;
 
@@ -1188,24 +621,33 @@ RICERCA GIOCATORI
 
     padding:25px 15px;
 
-    min-height:220px;
+    min-height:230px;
 
     display:flex;
 
     flex-direction:column;
 
-    justify-content:space-between;
-
     align-items:center;
 
-    box-shadow:
-    0 10px 25px rgba(0,0,0,0.35);
+    justify-content:space-between;
+
+    text-align:center;
 
     overflow:hidden;
+
+    color:white;
+
+    box-shadow:
+
+    0 10px 25px rgba(0,0,0,.35);
+
+    animation:entrataMVP .7s ease forwards;
 
 }
 
 
+
+/* linea oro sopra */
 
 .mvp-card::before{
 
@@ -1214,9 +656,11 @@ RICERCA GIOCATORI
     position:absolute;
 
     top:0;
+
     left:0;
 
     width:100%;
+
     height:6px;
 
     background:#d4af37;
@@ -1225,13 +669,62 @@ RICERCA GIOCATORI
 
 
 
+/* watermark PMC */
+
+.mvp-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background-image:url("NOME_LOGO_PMC");
+
+    background-repeat:no-repeat;
+
+    background-position:center;
+
+    background-size:150px;
+
+    opacity:.06;
+
+    pointer-events:none;
+
+}
+
+
+
+.mvp-card > *{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+
+
+/* ===========================
+   NOME GIOCATORE
+=========================== */
+
+
 .mvp-card h2{
 
     color:white;
 
-    font-size:25px;
+    font-family:'Montserrat',sans-serif;
 
-    height:65px;
+    font-size:22px;
+
+    font-weight:900;
+
+    text-transform:uppercase;
+
+    letter-spacing:1px;
+
+    min-height:55px;
 
     display:flex;
 
@@ -1241,8 +734,49 @@ RICERCA GIOCATORI
 
     text-align:center;
 
+    line-height:1.2;
+
+    margin:10px 0;
+
 }
 
+
+
+/* ===========================
+   BANDIERA
+=========================== */
+
+
+.mvp-card .player-flag{
+
+    font-size:40px;
+
+    margin:5px;
+
+}
+
+
+
+/* ===========================
+   SQUADRA
+=========================== */
+
+
+.mvp-card .team-name{
+
+    color:#d4af37;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+}
+
+
+
+/* ===========================
+   BOTTONE VOTA
+=========================== */
 
 
 .mvp-card button{
@@ -1255,13 +789,13 @@ RICERCA GIOCATORI
 
     border:none;
 
-    padding:14px;
-
     border-radius:30px;
 
-    font-size:18px;
+    padding:12px;
 
-    font-weight:bold;
+    font-size:16px;
+
+    font-weight:900;
 
     cursor:pointer;
 
@@ -1273,49 +807,105 @@ RICERCA GIOCATORI
 
 .mvp-card button:hover{
 
-    transform:scale(1.08);
+    background:#ff5fa2;
+
+    color:white;
+
+    transform:scale(1.05);
 
 }
 
 
 
-/* animazione entrata */
+/* ===========================
+   TESTATA PARTITA MVP
+=========================== */
 
-.mvp-card{
 
-    animation:entrataMVP .7s ease;
+.mvp-title{
+
+    text-align:center;
+
+    color:#d4af37;
+
+    font-family:'Bebas Neue',sans-serif;
+
+    font-size:40px;
+
+    letter-spacing:2px;
 
 }
 
+
+
+.mvp-giornata{
+
+    text-align:center;
+
+    color:white;
+
+    font-size:22px;
+
+    margin:15px;
+
+}
+
+
+
+.mvp-partita{
+
+    text-align:center;
+
+    color:white;
+
+    font-size:26px;
+
+    font-weight:800;
+
+    margin-bottom:25px;
+
+}
+
+
+
+/* ===========================
+   ANIMAZIONE
+=========================== */
 
 
 @keyframes entrataMVP{
 
-    from{
+from{
 
-        opacity:0;
+    opacity:0;
 
-        transform:translateY(40px);
-
-    }
-
-
-    to{
-
-        opacity:1;
-
-        transform:translateY(0);
-
-    }
+    transform:translateY(40px);
 
 }
 
 
+to{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+}
+
+
+
+/* ===========================
+   RESPONSIVE MVP
+=========================== */
 
 
 @media(max-width:600px){
 
     .mvp-grid{
+
+        grid-template-columns:repeat(2,1fr);
 
         gap:15px;
 
@@ -1324,385 +914,23 @@ RICERCA GIOCATORI
 
     .mvp-card{
 
-        min-height:200px;
+        min-height:210px;
+
+        padding:20px 10px;
 
     }
 
 
     .mvp-card h2{
 
-        font-size:20px;
+        font-size:18px;
 
     }
 
-}
 
-.mvp-card:nth-child(1){
-    animation-delay:0.1s;
-}
+    .mvp-card button{
 
-.mvp-card:nth-child(2){
-    animation-delay:0.2s;
-}
-
-.mvp-card:nth-child(3){
-    animation-delay:0.3s;
-}
-
-.mvp-card:nth-child(4){
-    animation-delay:0.4s;
-}
-
-/* SISTEMA CARD GIOCATORI SQUADRE */
-
-.team-player-card,
-.player-card,
-.player-box,
-.roster-player {
-
-    text-align: left !important;
-
-}
-
-
-.team-player-card *,
-.player-card *,
-.player-box *,
-.roster-player * {
-
-    text-align: left !important;
-
-}
-
-
-.team-player-card,
-.player-card,
-.player-box,
-.roster-player {
-
-    align-items: flex-start !important;
-    justify-content: flex-start !important;
-
-}
-
-/* CARD MVP PREMIUM */
-
-.mvp-card{
-
-    background:linear-gradient(145deg,#151515,#292929) !important;
-
-    border:2px solid #d4af37 !important;
-
-    border-radius:25px !important;
-
-    padding:25px 15px !important;
-
-    min-height:260px;
-
-    color:white;
-
-}
-
-
-.mvp-card h2{
-
-    color:white !important;
-
-    font-size:22px !important;
-
-}
-
-/* ================================
-   PALERMO MUNDIAL CUP - MVP CARD
-================================ */
-
-.mvp-card {
-
-    position: relative;
-
-    background:
-    linear-gradient(145deg, #111111, #242424);
-
-    border: 2px solid #d4af37;
-
-    border-radius: 25px;
-
-    padding: 25px 18px;
-
-    min-height: 280px;
-
-    color: white;
-
-    overflow: hidden;
-
-    box-shadow:
-    0 10px 30px rgba(0,0,0,0.45),
-    inset 0 0 20px rgba(212,175,55,0.15);
-
-    transition: 0.35s ease;
-
-}
-
-
-/* effetto quando tocchi la card */
-
-.mvp-card:hover {
-
-    transform: translateY(-8px);
-
-    box-shadow:
-    0 15px 40px rgba(212,175,55,0.35);
-
-}
-
-
-/* luce dorata superiore */
-
-.mvp-card::before {
-
-    content:"";
-
-    position:absolute;
-
-    top:0;
-
-    left:0;
-
-    width:100%;
-
-    height:6px;
-
-    background:linear-gradient(
-    90deg,
-    #d4af37,
-    #fff2a8,
-    #d4af37
-    );
-
-}
-
-
-/* stemma PMC */
-
-.mvp-card .pmc-logo {
-
-    width:70px;
-
-    height:70px;
-
-    margin:0 auto 15px;
-
-    display:block;
-
-}
-
-
-/* bandiera */
-
-.mvp-card .player-flag {
-
-    font-size:45px;
-
-    margin-bottom:10px;
-
-}
-
-
-/* nome giocatore */
-
-.mvp-card h2 {
-
-    font-size:22px;
-
-    font-weight:800;
-
-    text-transform:uppercase;
-
-    letter-spacing:1px;
-
-    margin:10px 0;
-
-    color:white;
-
-}
-
-
-/* squadra */
-
-.mvp-card .team-name {
-
-    font-size:16px;
-
-    color:#d4af37;
-
-    font-weight:bold;
-
-    margin-bottom:20px;
-
-}
-
-
-/* pulsante voto */
-
-.mvp-card button {
-
-    background:#d4af37;
-
-    color:#111;
-
-    border:none;
-
-    border-radius:30px;
-
-    padding:12px 35px;
-
-    font-size:15px;
-
-    font-weight:900;
-
-    cursor:pointer;
-
-    transition:0.3s ease;
-
-}
-
-
-.mvp-card button:hover {
-
-    background:white;
-
-    transform:scale(1.08);
-
-}
-
-
-/* entrata dal basso */
-
-.mvp-card {
-
-    animation:pmcEnter 0.7s ease forwards;
-
-}
-
-
-@keyframes pmcEnter {
-
-    from {
-
-        opacity:0;
-
-        transform:translateY(60px);
-
-    }
-
-
-    to {
-
-        opacity:1;
-
-        transform:translateY(0);
-
-    }
-
-}
-
-}
-
-
-/* NOME GIOCATORE */
-
-.mvp-card h2 {
-
-    color:white;
-
-    font-size:22px;
-
-    font-weight:900;
-
-    text-transform:uppercase;
-
-    letter-spacing:1px;
-
-}
-
-
-/* SQUADRA */
-
-.mvp-card .team-name {
-
-    color:#d4af37;
-
-    font-size:16px;
-
-    font-weight:bold;
-
-}
-
-
-/* PULSANTE VOTA */
-
-.mvp-card button {
-
-    background:#d4af37;
-
-    color:#111;
-
-    border-radius:25px;
-
-    font-weight:900;
-
-    padding:10px 35px;
-
-    border:none;
-
-}
-
-    font-weight:900;
-
-}
-
-
-/* VS */
-
-.mvp-partita .vs {
-
-    color:#d4af37;
-
-    margin:0 15px;
-
-    font-size:18px;
-
-    font-weight:bold;
-
-}
-
-
-/* Animazione entrata */
-
-.mvp-title,
-.mvp-giornata,
-.mvp-partita {
-
-    animation:pmcFade 0.8s ease forwards;
-
-}
-
-
-@keyframes pmcFade {
-
-    from {
-
-        opacity:0;
-
-        transform:translateY(30px);
-
-    }
-
-    to {
-
-        opacity:1;
-
-        transform:translateY(0);
+        font-size:14px;
 
     }
 
