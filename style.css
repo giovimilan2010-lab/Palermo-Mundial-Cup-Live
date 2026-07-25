@@ -1741,3 +1741,141 @@ RICERCA GIOCATORI
     border:none;
 
 }
+
+/* ==================================
+   PALERMO MUNDIAL CUP - MVP HEADER
+================================== */
+
+
+/* Titolo principale */
+
+.mvp-title,
+h1 {
+
+    color:#d4af37;
+
+    text-align:center;
+
+    font-size:32px;
+
+    font-weight:900;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    text-shadow:
+    0 0 10px rgba(212,175,55,0.5);
+
+}
+
+
+/* Box giornata */
+
+.mvp-giornata {
+
+    width:fit-content;
+
+    margin:20px auto;
+
+    padding:10px 30px;
+
+    border-radius:30px;
+
+    background:
+    linear-gradient(145deg,#1a1a1a,#303030);
+
+    border:1px solid #d4af37;
+
+    color:white;
+
+    font-weight:800;
+
+    font-size:18px;
+
+}
+
+
+/* Box partita */
+
+.mvp-partita {
+
+    margin:25px auto;
+
+    padding:20px;
+
+    max-width:500px;
+
+    text-align:center;
+
+    background:
+    linear-gradient(145deg,#111,#222);
+
+    border-radius:25px;
+
+    border:2px solid #d4af37;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,0.4);
+
+}
+
+
+/* Squadre nella partita */
+
+.mvp-partita span {
+
+    color:white;
+
+    font-size:22px;
+
+    font-weight:900;
+
+}
+
+
+/* VS */
+
+.mvp-partita .vs {
+
+    color:#d4af37;
+
+    margin:0 15px;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+}
+
+
+/* Animazione entrata */
+
+.mvp-title,
+.mvp-giornata,
+.mvp-partita {
+
+    animation:pmcFade 0.8s ease forwards;
+
+}
+
+
+@keyframes pmcFade {
+
+    from {
+
+        opacity:0;
+
+        transform:translateY(30px);
+
+    }
+
+    to {
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
