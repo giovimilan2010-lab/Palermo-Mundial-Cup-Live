@@ -1336,3 +1336,38 @@ RICERCA GIOCATORI
     }
 
    }
+
+/* ===== FIX RICERCA GIOCATORI ===== */
+
+#risultati{
+    margin-top:20px;
+}
+
+.risultato-giocatore{
+    display:block;
+    width:100%;
+    background:#1b1b1b;
+    border:2px solid #444;
+    border-radius:15px;
+    padding:15px;
+    margin-bottom:12px;
+    text-decoration:none;
+    color:#fff;
+    transition:.2s;
+}
+
+.risultato-giocatore:hover{
+    border-color:#d4af37;
+}
+
+.risultato-giocatore strong{
+    display:block;
+    color:#d4af37;
+    font-size:22px;
+    margin-bottom:5px;
+}
+
+.risultato-giocatore span{
+    color:#ffffff;
+    font-size:16px;
+}
