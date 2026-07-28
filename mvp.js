@@ -4,7 +4,7 @@ const SHEET_NAME = "PARTITA";
 
 const URL = `https://opensheet.elk.sh/${SHEET_ID}/${SHEET_NAME}`;
 
-const SCRIPT_URL = "INCOLLA_QUI_IL_TUO_LINK_EXEC";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwtf6D7FD1zfR30jEO-ATTTQzeyd-mwhHNbP5RgTzXg6OaX5OmYcjOMUHxh43E1RrEc/exec";
 
 async function caricaMVP(){
 
