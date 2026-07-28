@@ -19,45 +19,33 @@ async function caricaMVP(){
     datiPartita = dati[0];
 
 
-    document.getElementById("giornata").innerHTML =
-    datiPartita.Giornata;
+    document.getElementById("giornata").innerHTML = datiPartita.Giornata;
+
+    document.getElementById("partita").innerHTML = datiPartita.Partita;
 
 
-    document.getElementById("partita").innerHTML =
-    datiPartita.Partita;
+    document.getElementById("giocatore1").innerHTML = datiPartita.Giocatore1;
+
+    document.getElementById("giocatore2").innerHTML = datiPartita.Giocatore2;
+
+    document.getElementById("giocatore3").innerHTML = datiPartita.Giocatore3;
+
+    document.getElementById("giocatore4").innerHTML = datiPartita.Giocatore4;
 
 
-    document.getElementById("giocatore1").innerHTML =
-    datiPartita.Giocatore1;
+    document.getElementById("btn1").onclick = () => vota(1);
 
+    document.getElementById("btn2").onclick = () => vota(2);
 
-    document.getElementById("giocatore2").innerHTML =
-    datiPartita.Giocatore2;
+    document.getElementById("btn3").onclick = () => vota(3);
 
-
-    document.getElementById("giocatore3").innerHTML =
-    datiPartita.Giocatore3;
-
-
-    document.getElementById("giocatore4").innerHTML =
-    datiPartita.Giocatore4;
-
-
-
-    document.getElementById("btn1").onclick = () => vota(datiPartita.Giocatore1);
-
-    document.getElementById("btn2").onclick = () => vota(datiPartita.Giocatore2);
-
-    document.getElementById("btn3").onclick = () => vota(datiPartita.Giocatore3);
-
-    document.getElementById("btn4").onclick = () => vota(datiPartita.Giocatore4);
+    document.getElementById("btn4").onclick = () => vota(4);
 
 }
 
 
 
-async function vota(nomeGiocatore){
-
+async function vota(numeroGiocatore){
 
     await fetch(SCRIPT_URL,{
 
@@ -67,9 +55,7 @@ async function vota(nomeGiocatore){
 
             giornata:datiPartita.Giornata,
 
-            partita:datiPartita.Partita,
-
-            giocatore:nomeGiocatore
+            giocatore:numeroGiocatore
 
         })
 
@@ -77,7 +63,6 @@ async function vota(nomeGiocatore){
 
 
     window.location.href="grazie.html";
-
 
 }
 
