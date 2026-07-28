@@ -6,39 +6,81 @@ const URL = `https://opensheet.elk.sh/${SHEET_ID}/${SHEET_NAME}`;
 
 const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwtf6D7FD1zfR30jEO-ATTTQzeyd-mwhHNbP5RgTzXg6OaX5OmYcjOMUHxh43E1RrEc/exec";
 
+
+let datiPartita;
+
+
 async function caricaMVP(){
 
     const risposta = await fetch(URL);
 
     const dati = await risposta.json();
 
-    const partita = dati[0];
+    datiPartita = dati[0];
 
 
     document.getElementById("giornata").innerHTML =
-    partita.Giornata;
+    datiPartita.Giornata;
 
 
     document.getElementById("partita").innerHTML =
-    partita.Partita;
+    datiPartita.Partita;
 
 
     document.getElementById("giocatore1").innerHTML =
-    partita.Giocatore1;
+    datiPartita.Giocatore1;
 
 
     document.getElementById("giocatore2").innerHTML =
-    partita.Giocatore2;
+    datiPartita.Giocatore2;
 
 
     document.getElementById("giocatore3").innerHTML =
-    partita.Giocatore3;
+    datiPartita.Giocatore3;
 
 
     document.getElementById("giocatore4").innerHTML =
-    partita.Giocatore4;
+    datiPartita.Giocatore4;
+
+
+
+    document.getElementById("btn1").onclick = () => vota(datiPartita.Giocatore1);
+
+    document.getElementById("btn2").onclick = () => vota(datiPartita.Giocatore2);
+
+    document.getElementById("btn3").onclick = () => vota(datiPartita.Giocatore3);
+
+    document.getElementById("btn4").onclick = () => vota(datiPartita.Giocatore4);
 
 }
+
+
+
+async function vota(nomeGiocatore){
+
+
+    await fetch(SCRIPT_URL,{
+
+        method:"POST",
+
+        body:JSON.stringify({
+
+            giornata:datiPartita.Giornata,
+
+            partita:datiPartita.Partita,
+
+            giocatore:nomeGiocatore
+
+        })
+
+    });
+
+
+    window.location.href="grazie.html";
+
+
+}
+
 
 
 caricaMVP();
