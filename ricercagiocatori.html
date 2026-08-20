@@ -14,7 +14,6 @@
 
 <body>
 
-
 <header>
 
 <img src="1000391582.jpg" class="logo" alt="Palermo Mundial Cup">
@@ -75,23 +74,38 @@ Palermo Mundial Cup © 2026
 <script>
 
 const ricerca = document.getElementById("ricerca");
-
 const risultati = document.getElementById("risultati");
 
 
-document.addEventListener("giocatoriCaricati", function() {
+function attivaRicerca() {
 
     ricerca.disabled = false;
 
     risultati.innerHTML =
     "<p>Inizia a cercare un giocatore...</p>";
 
-});
+}
+
+
+const controlloCaricamento = setInterval(() => {
+
+    if (
+        Array.isArray(giocatori) &&
+        giocatori.length > 0
+    ) {
+
+        clearInterval(controlloCaricamento);
+
+        attivaRicerca();
+
+    }
+
+}, 100);
 
 
 ricerca.addEventListener("input", () => {
 
-    let testo = ricerca.value
+    const testo = ricerca.value
         .toLowerCase()
         .trim();
 
@@ -106,9 +120,9 @@ ricerca.addEventListener("input", () => {
     }
 
 
-    let trovati = giocatori.filter(g =>
+    const trovati = giocatori.filter(g =>
 
-        g.nome
+        String(g.nome)
         .toLowerCase()
         .includes(testo)
 
