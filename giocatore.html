@@ -20,12 +20,11 @@
 
 <img src="1000391582.jpg" class="logo" alt="Palermo Mundial Cup">
 
-<h1 id="nome"></h1>
+<h1 id="nome">Caricamento...</h1>
 
 <p id="squadra"></p>
 
 </header>
-
 
 
 <section class="menu-card" id="card-giocatore">
@@ -46,19 +45,18 @@
 <h2>📊 Statistiche Live</h2>
 
 
-<p>⚽ Gol: <span id="gol"></span></p>
+<p>⚽ Gol: <span id="gol">0</span></p>
 
-<p>🎯 Assist: <span id="assist"></span></p>
+<p>🎯 Assist: <span id="assist">0</span></p>
 
-<p>⭐ MVP: <span id="mvp"></span></p>
+<p>⭐ MVP: <span id="mvp">0</span></p>
 
-<p>🟨 Cartellini gialli: <span id="gialli"></span></p>
+<p>🟨 Cartellini gialli: <span id="gialli">0</span></p>
 
-<p>🟥 Cartellini rossi: <span id="rossi"></span></p>
+<p>🟥 Cartellini rossi: <span id="rossi">0</span></p>
 
 
 </section>
-
 
 
 <div style="text-align:center;margin:30px;">
@@ -72,13 +70,11 @@
 </div>
 
 
-
 <footer>
 
 Palermo Mundial Cup © 2026
 
 </footer>
-
 
 
 <script src="giocatori.js"></script>
@@ -92,52 +88,79 @@ const parametri = new URLSearchParams(window.location.search);
 const idGiocatore = Number(parametri.get("id"));
 
 
+async function caricaSchedaGiocatore() {
 
-const giocatore = giocatori.find(g => g.id === idGiocatore);
+    try {
 
-
-
-if(giocatore){
-
-
-document.getElementById("nome").innerHTML = giocatore.nome;
-
-document.getElementById("squadra").innerHTML = giocatore.squadra;
-
-document.getElementById("bandiera").innerHTML = giocatore.bandiera;
+        await window.giocatoriPronti;
 
 
-document.getElementById("numero").innerHTML = "#" + giocatore.numero;
+        const giocatore = giocatori.find(
+            g => g.id === idGiocatore
+        );
 
 
-document.getElementById("ruolo").innerHTML = giocatore.ruolo;
+        if (!giocatore) {
+
+            document.getElementById("nome").innerHTML =
+                "Giocatore non trovato";
+
+            return;
+
+        }
 
 
-document.getElementById("gol").innerHTML = giocatore.gol;
+        document.getElementById("nome").innerHTML =
+            giocatore.nome;
 
-document.getElementById("assist").innerHTML = giocatore.assist;
+        document.getElementById("squadra").innerHTML =
+            giocatore.squadra;
 
-document.getElementById("mvp").innerHTML = giocatore.mvp;
+        document.getElementById("bandiera").innerHTML =
+            giocatore.bandiera;
 
-document.getElementById("gialli").innerHTML = giocatore.gialli;
 
-document.getElementById("rossi").innerHTML = giocatore.rossi;
+        document.getElementById("numero").innerHTML =
+            "#" + giocatore.numero;
 
+
+        document.getElementById("ruolo").innerHTML =
+            giocatore.ruolo;
+
+
+        document.getElementById("gol").innerHTML =
+            giocatore.gol;
+
+        document.getElementById("assist").innerHTML =
+            giocatore.assist;
+
+        document.getElementById("mvp").innerHTML =
+            giocatore.mvp;
+
+        document.getElementById("gialli").innerHTML =
+            giocatore.gialli;
+
+        document.getElementById("rossi").innerHTML =
+            giocatore.rossi;
+
+    }
+
+    catch (errore) {
+
+        console.error("Errore:", errore);
+
+        document.getElementById("nome").innerHTML =
+            "Errore nel caricamento";
+
+    }
 
 }
 
 
-else{
-
-
-document.getElementById("nome").innerHTML="Giocatore non trovato";
-
-
-}
+caricaSchedaGiocatore();
 
 
 </script>
-
 
 
 </body>
