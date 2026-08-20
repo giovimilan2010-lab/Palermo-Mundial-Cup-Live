@@ -1,140 +1,162 @@
-<!DOCTYPE html>
-<html lang="it">
+const SHEET_ID = "1CbRLh17574gyg7MmL8UvhR-FgmObRLBabkuUrTlgMek";
 
-<head>
+const SHEET_NAME = "Statistiche Giocatori";
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Giocatore | Palermo Mundial Cup</title>
-
-<link rel="stylesheet" href="style.css">
-
-</head>
+const URL =
+  "https://opensheet.elk.sh/" +
+  SHEET_ID +
+  "/" +
+  encodeURIComponent(SHEET_NAME);
 
 
-<body>
+let giocatori = [];
 
 
-<header>
+function numeroValore(valore) {
 
-<img src="1000391582.jpg" class="logo" alt="Palermo Mundial Cup">
+  const numero = Number(valore);
 
-<h1 id="nome">Caricamento...</h1>
+  return isNaN(numero) ? 0 : numero;
 
-<p id="squadra"></p>
-
-</header>
+}
 
 
-<section class="menu-card" id="card-giocatore">
+function bandieraSquadra(squadra) {
+
+  const nome = String(squadra || "").trim().toLowerCase();
+
+  const bandiere = {
+
+    "argentina": "🇦🇷",
+    "messico": "🇲🇽",
+    "brasile": "🇧🇷",
+    "francia": "🇫🇷",
+    "spagna": "🇪🇸",
+    "olanda": "🇳🇱",
+    "stati uniti": "🇺🇸",
+    "inghilterra": "🏴"
+
+  };
+
+  return bandiere[nome] || "🏳️";
+
+}
 
 
-<h2 id="bandiera"></h2>
+async function caricaGiocatori() {
 
-<h1 id="numero"></h1>
+  try {
 
-<h2 id="ruolo"></h2>
+    const risposta = await fetch(URL);
 
-<hr>
+    if (!risposta.ok) {
 
-<h2>📊 Statistiche Live</h2>
+      throw new Error(
+        "Errore nel caricamento: " +
+        risposta.status
+      );
 
-<p>⚽ Gol: <span id="gol">0</span></p>
-
-<p>🎯 Assist: <span id="assist">0</span></p>
-
-<p>⭐ MVP: <span id="mvp">0</span></p>
-
-<p>🟨 Cartellini gialli: <span id="gialli">0</span></p>
-
-<p>🟥 Cartellini rossi: <span id="rossi">0</span></p>
+    }
 
 
-</section>
+    const dati = await risposta.json();
 
 
-<div style="text-align:center;margin:30px;">
+    giocatori = dati.map((g, index) => ({
 
-<a href="ricercagiocatori.html" class="menu-btn">
+      id: index + 1,
 
-⬅ Torna alla ricerca
-
-</a>
-
-</div>
-
-
-<footer>
-
-Palermo Mundial Cup © 2026
-
-</footer>
+      nome:
+        g.Giocatore ||
+        g.giocatore ||
+        "",
 
 
-<script src="giocatori.js"></script>
+      squadra:
+        g.Squadra ||
+        g.squadra ||
+        "",
 
 
-<script>
+      bandiera:
+        g.Bandiera ||
+        g.bandiera ||
+        bandieraSquadra(
+          g.Squadra ||
+          g.squadra
+        ),
 
-const parametri = new URLSearchParams(window.location.search);
 
-const idGiocatore = Number(parametri.get("id"));
+      numero:
+        numeroValore(
+          g.Numero ||
+          g.numero
+        ),
 
 
-document.addEventListener("giocatoriCaricati", function() {
+      ruolo:
+        g.Ruolo ||
+        g.ruolo ||
+        "Giocatore",
 
-    const giocatore = giocatori.find(
-        g => g.id === idGiocatore
+
+      gol:
+        numeroValore(
+          g.Gol ||
+          g.gol
+        ),
+
+
+      assist:
+        numeroValore(
+          g.Assist ||
+          g.assist
+        ),
+
+
+      mvp:
+        numeroValore(
+          g.MVP ||
+          g.Mvp ||
+          g.mvp
+        ),
+
+
+      gialli:
+        numeroValore(
+          g.Gialli ||
+          g.gialli ||
+          g["Cartellini Gialli"] ||
+          g["cartellini gialli"]
+        ),
+
+
+      rossi:
+        numeroValore(
+          g.Rossi ||
+          g.rossi ||
+          g["Cartellini Rossi"] ||
+          g["cartellini rossi"]
+        )
+
+    })).filter(g => g.nome !== "");
+
+
+    console.log(
+      "Giocatori caricati:",
+      giocatori
     );
 
 
-    if (giocatore) {
-
-        document.getElementById("nome").innerHTML =
-        giocatore.nome;
-
-        document.getElementById("squadra").innerHTML =
-        giocatore.squadra;
-
-        document.getElementById("bandiera").innerHTML =
-        giocatore.bandiera;
-
-        document.getElementById("numero").innerHTML =
-        "#" + giocatore.numero;
-
-        document.getElementById("ruolo").innerHTML =
-        giocatore.ruolo;
-
-        document.getElementById("gol").innerHTML =
-        giocatore.gol;
-
-        document.getElementById("assist").innerHTML =
-        giocatore.assist;
-
-        document.getElementById("mvp").innerHTML =
-        giocatore.mvp;
-
-        document.getElementById("gialli").innerHTML =
-        giocatore.gialli;
-
-        document.getElementById("rossi").innerHTML =
-        giocatore.rossi;
-
-    }
-
-    else {
-
-        document.getElementById("nome").innerHTML =
-        "Giocatore non trovato";
-
-    }
-
-});
-
-</script>
+    document.dispatchEvent(
+      new Event("giocatoriCaricati")
+    );
 
 
-</body>
+  }
 
-</html>
+  catch (errore) {
+
+    console.error(
+      "Errore nel caricamento dei giocatori:",
+     
