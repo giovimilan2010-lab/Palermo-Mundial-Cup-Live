@@ -3,9 +3,9 @@ const SHEET_ID = "1CbRLh17574gyg7MmL8UvhR-FgmObRLBabkuUrTlgMek";
 const SHEET_NAME = "Statistiche Giocatori";
 
 const URL =
-  "https://opensheet.elk.sh/" +
+  "https://docs.google.com/spreadsheets/d/" +
   SHEET_ID +
-  "/" +
+  "/gviz/tq?tqx=out:json&sheet=" +
   encodeURIComponent(SHEET_NAME);
 
 
@@ -13,6 +13,14 @@ let giocatori = [];
 
 
 function numeroValore(valore) {
+
+  if (
+    valore === undefined ||
+    valore === null ||
+    valore === ""
+  ) {
+    return 0;
+  }
 
   const numero = Number(valore);
 
@@ -23,7 +31,9 @@ function numeroValore(valore) {
 
 function bandieraSquadra(squadra) {
 
-  const nome = String(squadra || "").trim().toLowerCase();
+  const nome = String(squadra || "")
+    .trim()
+    .toLowerCase();
 
   const bandiere = {
 
@@ -52,87 +62,130 @@ async function caricaGiocatori() {
     if (!risposta.ok) {
 
       throw new Error(
-        "Errore nel caricamento: " + risposta.status
+        "Errore Google Fogli: " +
+        risposta.status
       );
 
     }
 
 
-    const dati = await risposta.json();
+    const testo = await risposta.text();
 
 
-    giocatori = dati.map((g, index) => ({
-
-      id: index + 1,
-
-      nome:
-        g.Giocatore ||
-        g.giocatore ||
-        "",
-
-      squadra:
-        g.Squadra ||
-        g.squadra ||
-        "",
-
-      bandiera:
-        g.Bandiera ||
-        g.bandiera ||
-        bandieraSquadra(
-          g.Squadra ||
-          g.squadra
-        ),
-
-      numero:
-        numeroValore(
-          g.Numero ||
-          g.numero
-        ),
-
-      ruolo:
-        g.Ruolo ||
-        g.ruolo ||
-        "Giocatore",
-
-      gol:
-        numeroValore(
-          g.Gol ||
-          g.gol
-        ),
-
-      assist:
-        numeroValore(
-          g.Assist ||
-          g.assist
-        ),
-
-      mvp:
-        numeroValore(
-          g.MVP ||
-          g.Mvp ||
-          g.mvp
-        ),
-
-      gialli:
-        numeroValore(
-          g.Gialli ||
-          g.gialli ||
-          g["Cartellini Gialli"] ||
-          g["cartellini gialli"]
-        ),
-
-      rossi:
-        numeroValore(
-          g.Rossi ||
-          g.rossi ||
-          g["Cartellini Rossi"] ||
-          g["cartellini rossi"]
+    const json = JSON.parse(
+      testo
+        .substring(
+          testo.indexOf("{"),
+          testo.lastIndexOf("}") + 1
         )
+    );
 
-    })).filter(g => g.nome !== "");
+
+    const colonne = json.table.cols.map(
+      colonna =>
+        colonna.label
+          .trim()
+          .toLowerCase()
+    );
 
 
-    console.log("Giocatori caricati:", giocatori);
+    const righe = json.table.rows;
+
+
+    giocatori = righe.map((riga, index) => {
+
+      const dati = {};
+
+
+      riga.c.forEach((cella, posizione) => {
+
+        if (
+          colonne[posizione]
+        ) {
+
+          dati[colonne[posizione]] =
+            cella ? cella.v : "";
+
+        }
+
+      });
+
+
+      const squadra =
+        dati["squadra"] || "";
+
+
+      return {
+
+        id: index + 1,
+
+        nome:
+          dati["giocatore"] ||
+          "",
+
+
+        squadra:
+          squadra,
+
+
+        bandiera:
+          bandieraSquadra(squadra),
+
+
+        numero:
+          numeroValore(
+            dati["numero"]
+          ),
+
+
+        ruolo:
+          dati["ruolo"] ||
+          "Giocatore",
+
+
+        gol:
+          numeroValore(
+            dati["gol"]
+          ),
+
+
+        assist:
+          numeroValore(
+            dati["assist"]
+          ),
+
+
+        mvp:
+          numeroValore(
+            dati["mvp"]
+          ),
+
+
+        gialli:
+          numeroValore(
+            dati["gialli"] ||
+            dati["cartellini gialli"]
+          ),
+
+
+        rossi:
+          numeroValore(
+            dati["rossi"] ||
+            dati["cartellini rossi"]
+          )
+
+      };
+
+    }).filter(
+      giocatore =>
+        giocatore.nome !== ""
+    );
+
+
+    console.log(
+      "Giocatori caricati:",
+      giocatori
+    );
 
 
     document.dispatchEvent(
@@ -145,8 +198,13 @@ async function caricaGiocatori() {
   catch (errore) {
 
     console.error(
-      "Errore nel caricamento dei giocatori:",
+      "Errore caricamento giocatori:",
       errore
+    );
+
+
+    document.dispatchEvent(
+      new Event("giocatoriCaricati")
     );
 
   }
