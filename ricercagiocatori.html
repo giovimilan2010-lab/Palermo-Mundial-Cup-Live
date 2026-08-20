@@ -52,7 +52,7 @@ touch-action:auto;
 
 <div id="risultati">
 
-<p>Inizia a cercare un giocatore...</p>
+<p>Caricamento giocatori...</p>
 
 </div>
 
@@ -62,9 +62,7 @@ touch-action:auto;
 <div style="text-align:center;margin:30px;">
 
 <a href="index.html" class="menu-btn">
-
 ⬅ Torna alla Home
-
 </a>
 
 </div>
@@ -86,6 +84,31 @@ const ricerca = document.getElementById("ricerca");
 const risultati = document.getElementById("risultati");
 
 
+async function avviaRicerca() {
+
+    try {
+
+        await window.giocatoriPronti;
+
+
+        risultati.innerHTML =
+        "<p>Inizia a cercare un giocatore...</p>";
+
+
+    }
+
+    catch (errore) {
+
+        console.error(errore);
+
+        risultati.innerHTML =
+        "<p>Errore nel caricamento dei giocatori.</p>";
+
+    }
+
+}
+
+
 ricerca.addEventListener("input", () => {
 
     const testo = ricerca.value
@@ -103,10 +126,7 @@ ricerca.addEventListener("input", () => {
     }
 
 
-    if (
-        !Array.isArray(giocatori) ||
-        giocatori.length === 0
-    ) {
+    if (!giocatori || giocatori.length === 0) {
 
         risultati.innerHTML =
         "<p>Caricamento giocatori...</p>";
@@ -119,8 +139,8 @@ ricerca.addEventListener("input", () => {
     const trovati = giocatori.filter(g =>
 
         String(g.nome)
-        .toLowerCase()
-        .includes(testo)
+            .toLowerCase()
+            .includes(testo)
 
     );
 
@@ -142,7 +162,8 @@ ricerca.addEventListener("input", () => {
 
         risultati.innerHTML += `
 
-        <a href="giocatore.html?id=${g.id}" class="risultato-giocatore">
+        <a href="giocatore.html?id=${g.id}"
+           class="risultato-giocatore">
 
             ${g.bandiera}
 
@@ -159,6 +180,9 @@ ricerca.addEventListener("input", () => {
     });
 
 });
+
+
+avviaRicerca();
 
 </script>
 
