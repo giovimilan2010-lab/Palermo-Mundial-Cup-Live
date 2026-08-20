@@ -14,6 +14,7 @@
 
 <body>
 
+
 <header>
 
 <img src="1000391582.jpg" class="logo" alt="Palermo Mundial Cup">
@@ -36,13 +37,12 @@
 id="ricerca"
 type="text"
 placeholder="Scrivi il nome del giocatore..."
-disabled
 >
 
 
 <div id="risultati">
 
-<p>Caricamento giocatori...</p>
+<p>Inizia a cercare un giocatore...</p>
 
 </div>
 
@@ -77,32 +77,6 @@ const ricerca = document.getElementById("ricerca");
 const risultati = document.getElementById("risultati");
 
 
-function attivaRicerca() {
-
-    ricerca.disabled = false;
-
-    risultati.innerHTML =
-    "<p>Inizia a cercare un giocatore...</p>";
-
-}
-
-
-const controlloCaricamento = setInterval(() => {
-
-    if (
-        Array.isArray(giocatori) &&
-        giocatori.length > 0
-    ) {
-
-        clearInterval(controlloCaricamento);
-
-        attivaRicerca();
-
-    }
-
-}, 100);
-
-
 ricerca.addEventListener("input", () => {
 
     const testo = ricerca.value
@@ -114,6 +88,19 @@ ricerca.addEventListener("input", () => {
 
         risultati.innerHTML =
         "<p>Inizia a cercare un giocatore...</p>";
+
+        return;
+
+    }
+
+
+    if (
+        !Array.isArray(giocatori) ||
+        giocatori.length === 0
+    ) {
+
+        risultati.innerHTML =
+        "<p>Caricamento giocatori...</p>";
 
         return;
 
