@@ -26,7 +26,6 @@
 </header>
 
 
-
 <section class="menu-card">
 
 <h2 style="text-align:center;">
@@ -34,23 +33,22 @@
 </h2>
 
 
-<input 
+<input
 id="ricerca"
 type="text"
 placeholder="Scrivi il nome del giocatore..."
+disabled
 >
-
 
 
 <div id="risultati">
 
-<p>Inizia a cercare un giocatore...</p>
+<p>Caricamento giocatori...</p>
 
 </div>
 
 
 </section>
-
 
 
 <div style="text-align:center;margin:30px;">
@@ -64,7 +62,6 @@ placeholder="Scrivi il nome del giocatore..."
 </div>
 
 
-
 <footer>
 
 Palermo Mundial Cup © 2026
@@ -72,90 +69,88 @@ Palermo Mundial Cup © 2026
 </footer>
 
 
-
 <script src="giocatori.js"></script>
 
 
 <script>
-
 
 const ricerca = document.getElementById("ricerca");
 
 const risultati = document.getElementById("risultati");
 
 
+document.addEventListener("giocatoriCaricati", function() {
 
-ricerca.addEventListener("input",()=>{
+    ricerca.disabled = false;
 
-
-let testo = ricerca.value.toLowerCase();
-
-
-
-if(testo===""){
-
-risultati.innerHTML="<p>Inizia a cercare un giocatore...</p>";
-
-return;
-
-}
-
-
-
-let trovati = giocatori.filter(g =>
-
-g.nome.toLowerCase().includes(testo)
-
-);
-
-
-
-if(trovati.length===0){
-
-risultati.innerHTML="<p>Nessun giocatore trovato</p>";
-
-return;
-
-}
-
-
-
-risultati.innerHTML="";
-
-
-
-trovati.forEach(g=>{
-
-
-risultati.innerHTML += `
-
-
-<a href="giocatore.html?id=${g.id}" class="risultato-giocatore">
-
-
-${g.bandiera}
-
-<strong>${g.nome}</strong>
-
-<br>
-
-<span>${g.squadra}</span>
-
-
-</a>
-
-
-`;
-
+    risultati.innerHTML =
+    "<p>Inizia a cercare un giocatore...</p>";
 
 });
 
 
-});
+ricerca.addEventListener("input", () => {
 
+    let testo = ricerca.value
+        .toLowerCase()
+        .trim();
+
+
+    if (testo === "") {
+
+        risultati.innerHTML =
+        "<p>Inizia a cercare un giocatore...</p>";
+
+        return;
+
+    }
+
+
+    let trovati = giocatori.filter(g =>
+
+        g.nome
+        .toLowerCase()
+        .includes(testo)
+
+    );
+
+
+    if (trovati.length === 0) {
+
+        risultati.innerHTML =
+        "<p>Nessun giocatore trovato</p>";
+
+        return;
+
+    }
+
+
+    risultati.innerHTML = "";
+
+
+    trovati.forEach(g => {
+
+        risultati.innerHTML += `
+
+        <a href="giocatore.html?id=${g.id}" class="risultato-giocatore">
+
+        ${g.bandiera}
+
+        <strong>${g.nome}</strong>
+
+        <br>
+
+        <span>${g.squadra}</span>
+
+        </a>
+
+        `;
+
+    });
+
+});
 
 </script>
-
 
 
 </body>
