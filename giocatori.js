@@ -1,269 +1,140 @@
-const giocatori = [
+<!DOCTYPE html>
+<html lang="it">
 
-{
-id:1,
-nome:"Angelo Murana",
-squadra:"Argentina",
-bandiera:"🇦🇷",
-numero:1,
-ruolo:"Portiere",
-gol:0,
-assist:0,
-gialli:0,
-rossi:0,
-mvp:0
-},
+<head>
 
-{
-id:2,
-nome:"Davide Luparello",
-squadra:"Argentina",
-bandiera:"🇦🇷",
-numero:4,
-ruolo:"Difensore",
-gol:0,
-assist:0,
-gialli:0,
-rossi:0,
-mvp:0
-},
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-{
-id:3,
-nome:"Giuseppe Ilardi",
-squadra:"Argentina",
-bandiera:"🇦🇷",
-numero:3,
-ruolo:"Difensore",
-gol:0,
-assist:0,
-gialli:0,
-rossi:0,
-mvp:0
-},
+<title>Giocatore | Palermo Mundial Cup</title>
 
-{
-id:4,
-nome:"Pietro Intravaglia",
-squadra:"Argentina",
-bandiera:"🇦🇷",
-numero:5,
-ruolo:"Difensore",
-gol:0,
-assist:0,
-gialli:0,
-rossi:0,
-mvp:0
-},
+<link rel="stylesheet" href="style.css">
 
-{
-id:5,
-nome:"Cristian D'Aloisi",
-squadra:"Argentina",
-bandiera:"🇦🇷",
-numero:22,
-ruolo:"Centrocampista",
-gol:0,
-assist:0,
-gialli:0,
-rossi:0,
-mvp:0
-},
+</head>
 
-{
-id:6,
-nome:"Filippo Sicomaro",
-squadra:"Argentina",
-bandiera:"🇦🇷",
-numero:14,
-ruolo:"Centrocampista",
-gol:0,
-assist:0,
-gialli:0,
-rossi:0,
-mvp:0
-},
 
-{
-id:7,
-nome:"Stevean Berlich",
-squadra:"Argentina",
-bandiera:"🇦🇷",
-numero:77,
-ruolo:"Centrocampista",
-gol:0,
-assist:0,
-gialli:0,
-rossi:0,
-mvp:0
-},
+<body>
 
-{
-id:8,
-nome:"Davide Pirrotta",
-squadra:"Argentina",
-bandiera:"🇦🇷",
-numero:10,
-ruolo:"Attaccante",
-gol:0,
-assist:0,
-gialli:0,
-rossi:0,
-mvp:0
-},
 
-{
-id:9,
-nome:"Domenico Faraci",
-squadra:"Argentina",
-bandiera:"🇦🇷",
-numero:7,
-ruolo:"Attaccante",
-gol:0,
-assist:0,
-gialli:0,
-rossi:0,
-mvp:0
-},
+<header>
 
-{
-id:10,
-nome:"Samu Pucci",
-squadra:"Argentina",
-bandiera:"🇦🇷",
-numero:11,
-ruolo:"Attaccante",
-gol:0,
-assist:0,
-gialli:0,
-rossi:0,
-mvp:0
-},
+<img src="1000391582.jpg" class="logo" alt="Palermo Mundial Cup">
 
-{
-id:11,
-nome:"Fortunato Tripodi",
-squadra:"Messico",
-bandiera:"🇲🇽",
-numero:77,
-ruolo:"Portiere",
-gol:0,
-assist:0,
-gialli:0,
-rossi:0,
-mvp:0
-},
+<h1 id="nome">Caricamento...</h1>
 
-{
-id:12,
-nome:"Francesco Mule",
-squadra:"Messico",
-bandiera:"🇲🇽",
-numero:6,
-ruolo:"Difensore",
-gol:0,
-assist:0,
-gialli:0,
-rossi:0,
-mvp:0
-},
+<p id="squadra"></p>
 
-{
-id:13,
-nome:"Mattia Tusa",
-squadra:"Messico",
-bandiera:"🇲🇽",
-numero:21,
-ruolo:"Difensore",
-gol:0,
-assist:0,
-gialli:0,
-rossi:0,
-mvp:0
-},
+</header>
 
-{
-id:14,
-nome:"Antonino Bartolotta",
-squadra:"Messico",
-bandiera:"🇲🇽",
-numero:10,
-ruolo:"Difensore",
-gol:0,
-assist:0,
-gialli:0,
-rossi:0,
-mvp:0
-},
 
-{
-id:15,
-nome:"Yari Mancuso",
-squadra:"Messico",
-bandiera:"🇲🇽",
-numero:9,
-ruolo:"Centrocampista",
-gol:0,
-assist:0,
-gialli:0,
-rossi:0,
-mvp:0
-},
+<section class="menu-card" id="card-giocatore">
 
-{
-id:16,
-nome:"Giuseppe Lo Cascio",
-squadra:"Messico",
-bandiera:"🇲🇽",
-numero:13,
-ruolo:"Centrocampista",
-gol:0,
-assist:0,
-gialli:0,
-rossi:0,
-mvp:0
-},
 
-{
-id:17,
-nome:"Stefano La Rosa",
-squadra:"Messico",
-bandiera:"🇲🇽",
-numero:7,
-ruolo:"Centrocampista",
-gol:0,
-assist:0,
-gialli:0,
-rossi:0,
-mvp:0
-},
+<h2 id="bandiera"></h2>
 
-{
-id:18,
-nome:"Dennis Favarò",
-squadra:"Messico",
-bandiera:"🇲🇽",
-numero:19,
-ruolo:"Attaccante",
-gol:0,
-assist:0,
-gialli:0,
-rossi:0,
-mvp:0
-},
+<h1 id="numero"></h1>
 
-{
-id:19,
-nome:"Danilo Schiera",
-squadra:"Messico",
-bandiera:"🇲🇽",
-numero:12,
-ruolo:"Attaccante",
-gol:0,
-assist:0,
-gialli:0,
-rossi:0,
-mvp:0
-}
+<h2 id="ruolo"></h2>
 
-];
+<hr>
+
+<h2>📊 Statistiche Live</h2>
+
+<p>⚽ Gol: <span id="gol">0</span></p>
+
+<p>🎯 Assist: <span id="assist">0</span></p>
+
+<p>⭐ MVP: <span id="mvp">0</span></p>
+
+<p>🟨 Cartellini gialli: <span id="gialli">0</span></p>
+
+<p>🟥 Cartellini rossi: <span id="rossi">0</span></p>
+
+
+</section>
+
+
+<div style="text-align:center;margin:30px;">
+
+<a href="ricercagiocatori.html" class="menu-btn">
+
+⬅ Torna alla ricerca
+
+</a>
+
+</div>
+
+
+<footer>
+
+Palermo Mundial Cup © 2026
+
+</footer>
+
+
+<script src="giocatori.js"></script>
+
+
+<script>
+
+const parametri = new URLSearchParams(window.location.search);
+
+const idGiocatore = Number(parametri.get("id"));
+
+
+document.addEventListener("giocatoriCaricati", function() {
+
+    const giocatore = giocatori.find(
+        g => g.id === idGiocatore
+    );
+
+
+    if (giocatore) {
+
+        document.getElementById("nome").innerHTML =
+        giocatore.nome;
+
+        document.getElementById("squadra").innerHTML =
+        giocatore.squadra;
+
+        document.getElementById("bandiera").innerHTML =
+        giocatore.bandiera;
+
+        document.getElementById("numero").innerHTML =
+        "#" + giocatore.numero;
+
+        document.getElementById("ruolo").innerHTML =
+        giocatore.ruolo;
+
+        document.getElementById("gol").innerHTML =
+        giocatore.gol;
+
+        document.getElementById("assist").innerHTML =
+        giocatore.assist;
+
+        document.getElementById("mvp").innerHTML =
+        giocatore.mvp;
+
+        document.getElementById("gialli").innerHTML =
+        giocatore.gialli;
+
+        document.getElementById("rossi").innerHTML =
+        giocatore.rossi;
+
+    }
+
+    else {
+
+        document.getElementById("nome").innerHTML =
+        "Giocatore non trovato";
+
+    }
+
+});
+
+</script>
+
+
+</body>
+
+</html>
