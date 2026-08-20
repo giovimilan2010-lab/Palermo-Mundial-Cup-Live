@@ -52,8 +52,7 @@ async function caricaGiocatori() {
     if (!risposta.ok) {
 
       throw new Error(
-        "Errore nel caricamento: " +
-        risposta.status
+        "Errore nel caricamento: " + risposta.status
       );
 
     }
@@ -71,12 +70,10 @@ async function caricaGiocatori() {
         g.giocatore ||
         "",
 
-
       squadra:
         g.Squadra ||
         g.squadra ||
         "",
-
 
       bandiera:
         g.Bandiera ||
@@ -86,19 +83,16 @@ async function caricaGiocatori() {
           g.squadra
         ),
 
-
       numero:
         numeroValore(
           g.Numero ||
           g.numero
         ),
 
-
       ruolo:
         g.Ruolo ||
         g.ruolo ||
         "Giocatore",
-
 
       gol:
         numeroValore(
@@ -106,13 +100,11 @@ async function caricaGiocatori() {
           g.gol
         ),
 
-
       assist:
         numeroValore(
           g.Assist ||
           g.assist
         ),
-
 
       mvp:
         numeroValore(
@@ -121,7 +113,6 @@ async function caricaGiocatori() {
           g.mvp
         ),
 
-
       gialli:
         numeroValore(
           g.Gialli ||
@@ -129,7 +120,6 @@ async function caricaGiocatori() {
           g["Cartellini Gialli"] ||
           g["cartellini gialli"]
         ),
-
 
       rossi:
         numeroValore(
@@ -142,10 +132,7 @@ async function caricaGiocatori() {
     })).filter(g => g.nome !== "");
 
 
-    console.log(
-      "Giocatori caricati:",
-      giocatori
-    );
+    console.log("Giocatori caricati:", giocatori);
 
 
     document.dispatchEvent(
@@ -159,4 +146,12 @@ async function caricaGiocatori() {
 
     console.error(
       "Errore nel caricamento dei giocatori:",
-     
+      errore
+    );
+
+  }
+
+}
+
+
+caricaGiocatori();
