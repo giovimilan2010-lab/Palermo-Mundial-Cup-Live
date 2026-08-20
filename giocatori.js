@@ -36,7 +36,6 @@ function bandieraSquadra(squadra) {
     .toLowerCase();
 
   const bandiere = {
-
     "argentina": "🇦🇷",
     "messico": "🇲🇽",
     "brasile": "🇧🇷",
@@ -45,7 +44,6 @@ function bandieraSquadra(squadra) {
     "olanda": "🇳🇱",
     "stati uniti": "🇺🇸",
     "inghilterra": "🏴"
-
   };
 
   return bandiere[nome] || "🏳️";
@@ -55,56 +53,45 @@ function bandieraSquadra(squadra) {
 
 async function caricaGiocatori() {
 
-  try {
+  const risposta = await fetch(URL);
 
-    const risposta = await fetch(URL);
-
-    if (!risposta.ok) {
-
-      throw new Error(
-        "Errore Google Fogli: " +
-        risposta.status
-      );
-
-    }
+  const testo = await risposta.text();
 
 
-    const testo = await risposta.text();
+  const inizio = testo.indexOf("{");
+
+  const fine = testo.lastIndexOf("}") + 1;
 
 
-    const json = JSON.parse(
-      testo
-        .substring(
-          testo.indexOf("{"),
-          testo.lastIndexOf("}") + 1
-        )
-    );
+  const json = JSON.parse(
+    testo.substring(inizio, fine)
+  );
 
 
-    const colonne = json.table.cols.map(
-      colonna =>
-        colonna.label
-          .trim()
-          .toLowerCase()
-    );
+  const colonne = json.table.cols.map(colonna =>
+    String(colonna.label || "")
+      .trim()
+      .toLowerCase()
+  );
 
 
-    const righe = json.table.rows;
-
-
-    giocatori = righe.map((riga, index) => {
+  giocatori = json.table.rows
+    .map((riga, index) => {
 
       const dati = {};
 
 
       riga.c.forEach((cella, posizione) => {
 
-        if (
-          colonne[posizione]
-        ) {
+        const nomeColonna =
+          colonne[posizione];
 
-          dati[colonne[posizione]] =
-            cella ? cella.v : "";
+        if (nomeColonna) {
+
+          dati[nomeColonna] =
+            cella && cella.v !== null
+              ? cella.v
+              : "";
 
         }
 
@@ -120,53 +107,45 @@ async function caricaGiocatori() {
         id: index + 1,
 
         nome:
-          dati["giocatore"] ||
-          "",
+          String(
+            dati["giocatore"] || ""
+          ).trim(),
 
-
-        squadra:
-          squadra,
-
+        squadra: squadra,
 
         bandiera:
           bandieraSquadra(squadra),
-
 
         numero:
           numeroValore(
             dati["numero"]
           ),
 
-
         ruolo:
-          dati["ruolo"] ||
-          "Giocatore",
-
+          String(
+            dati["ruolo"] || "Giocatore"
+          ),
 
         gol:
           numeroValore(
             dati["gol"]
           ),
 
-
         assist:
           numeroValore(
             dati["assist"]
           ),
-
 
         mvp:
           numeroValore(
             dati["mvp"]
           ),
 
-
         gialli:
           numeroValore(
             dati["gialli"] ||
             dati["cartellini gialli"]
           ),
-
 
         rossi:
           numeroValore(
@@ -176,40 +155,40 @@ async function caricaGiocatori() {
 
       };
 
-    }).filter(
-      giocatore =>
-        giocatore.nome !== ""
-    );
+    })
+
+    .filter(g => g.nome !== "");
 
 
-    console.log(
-      "Giocatori caricati:",
-      giocatori
-    );
+  console.log(
+    "GIOCATORI CARICATI CORRETTAMENTE:",
+    giocatori
+  );
 
 
-    document.dispatchEvent(
-      new Event("giocatoriCaricati")
-    );
-
-
-  }
-
-  catch (errore) {
-
-    console.error(
-      "Errore caricamento giocatori:",
-      errore
-    );
-
-
-    document.dispatchEvent(
-      new Event("giocatoriCaricati")
-    );
-
-  }
+  return giocatori;
 
 }
 
 
-caricaGiocatori();
+window.giocatoriPronti =
+  caricaGiocatori()
+    .then(() => {
+
+      document.dispatchEvent(
+        new Event("giocatoriCaricati")
+      );
+
+      return giocatori;
+
+    })
+    .catch(errore => {
+
+      console.error(
+        "ERRORE:",
+        errore
+      );
+
+      throw errore;
+
+    });
