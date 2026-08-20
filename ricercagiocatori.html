@@ -14,7 +14,6 @@
 
 <body>
 
-
 <header>
 
 <img src="1000391582.jpg" class="logo" alt="Palermo Mundial Cup">
@@ -37,6 +36,17 @@
 id="ricerca"
 type="text"
 placeholder="Scrivi il nome del giocatore..."
+style="
+display:block;
+width:100%;
+box-sizing:border-box;
+position:relative;
+z-index:9999;
+pointer-events:auto;
+user-select:text;
+-webkit-user-select:text;
+touch-action:auto;
+"
 >
 
 
@@ -45,7 +55,6 @@ placeholder="Scrivi il nome del giocatore..."
 <p>Inizia a cercare un giocatore...</p>
 
 </div>
-
 
 </section>
 
@@ -135,13 +144,13 @@ ricerca.addEventListener("input", () => {
 
         <a href="giocatore.html?id=${g.id}" class="risultato-giocatore">
 
-        ${g.bandiera}
+            ${g.bandiera}
 
-        <strong>${g.nome}</strong>
+            <strong>${g.nome}</strong>
 
-        <br>
+            <br>
 
-        <span>${g.squadra}</span>
+            <span>${g.squadra}</span>
 
         </a>
 
@@ -152,7 +161,6 @@ ricerca.addEventListener("input", () => {
 });
 
 </script>
-
 
 </body>
 
